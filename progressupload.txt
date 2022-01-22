@@ -1,0 +1,27 @@
+from requests_toolbelt import MultipartEncoder, MultipartEncoderMonitor 
+
+import requests 
+ 
+def my_callback(monitor): 
+
+    # Your callback function 
+
+    print monitor.bytes_read 
+ 
+e = MultipartEncoder(fields={
+
+    'field0': 'value', 'field1': 'value',
+
+    'field2': ('filename', open('file.py', 'rb'), 'text/plain')
+
+    }) 
+
+m = MultipartEncoderMonitor(e, my_callback) 
+ 
+r = requests.post(
+    'http://httpbin.org/post', 
+    data=m,
+    headers=
+    {
+        'Content-Type': m.content_type
+    })

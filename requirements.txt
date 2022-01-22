@@ -1,0 +1,8 @@
+requests
+py7zr
+python-telegram-bot
+todus3
+pytube
+BeautifulSoup4
+yt_dlp
+requests_toolbelt
