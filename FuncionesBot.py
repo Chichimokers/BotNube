@@ -557,7 +557,7 @@ def ProcesarDescargadeunFichero(update,context):
    update.message.reply_text("El ID de esta tarea es : "+str(ID)) 
    def start():
       
-     clean_url = urllib.parse.unquote(str(update.message.text))
+     clean_url = update.message.text
 
      r = requests.get(clean_url,stream=True)
 

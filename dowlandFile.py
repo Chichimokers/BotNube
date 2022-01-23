@@ -45,7 +45,7 @@ def dowland(url,update,cookies):
 
       _url = str(url)
 
-      clean_url = parse.unquote(_url)
+      clean_url = _url
 
       headers = {
          "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0"
@@ -62,6 +62,7 @@ def dowland(url,update,cookies):
          completename = r.headers.get("Content-Disposition")
 
          print(completename)
+         
          if(completename.__contains__(";")):
 
           completename = completename.split(";")[1]
