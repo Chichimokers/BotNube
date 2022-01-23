@@ -206,6 +206,7 @@ def banUser(update,context):
 def BanearUsuario(update,context):
 
     DisallowUser(update=update,context=context)
+
  
     return ConversationHandler.END
 

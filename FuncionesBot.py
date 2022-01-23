@@ -538,14 +538,14 @@ def DisallowUser(update,context):
    for e in userlis:
 
      if(e ==update.message.chat.username) :
-
+       update.message.reply_text("Se elimino a @"+update.message.chat.username)
        userlis.remove(e)
 
-   admincontroller = open("/app/whitelist.txt","w")
+   admincontrollers = open("/app/whitelist.txt","w")
 
    for s in userlis :
 
-       admincontroller.write(s+"\n")
+       admincontrollers.write(s+"\n")
 
    update.message.reply_text("Se ha removido a @"+update.message.chat.username)
 
