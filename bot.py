@@ -204,7 +204,9 @@ def banUser(update,context):
     pass
 
 def BanearUsuario(update,context):
+
     DisallowUser(update=update,context=context)
+    
     pass
 
 def AddUser(update,context):

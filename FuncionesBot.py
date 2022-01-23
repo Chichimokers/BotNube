@@ -562,8 +562,9 @@ def DisallowUser(update,conext):
       update.message.reply_text(r)
      
 
-   return ConversationHandler.END
+   update.message.reply_text("Finalizao")
 
+   return ConversationHandler.END
 
    pass
 
@@ -588,9 +589,9 @@ def Agregarusuario(update,context):
         update.message.reply_text(userin)
 
     fileadmin.close()
-
+    update.message.reply_text("Finalizao")
     return ConversationHandler.END
-    
+
     pass
 
 
