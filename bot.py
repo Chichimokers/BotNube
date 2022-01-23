@@ -206,8 +206,7 @@ def banUser(update,context):
 def BanearUsuario(update,context):
 
     DisallowUser(update=update,context=context)
-
-        
+ 
     return ConversationHandler.END
 
     pass
@@ -215,8 +214,7 @@ def BanearUsuario(update,context):
 def AddUser(update,context):
 
     Agregarusuario(update=update,context=context)
-
-        
+   
     return ConversationHandler.END
     
     pass
