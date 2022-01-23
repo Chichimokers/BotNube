@@ -52,12 +52,12 @@ from os.path import basename
 
 from ChekAllows import EstasPermitiado , AreAdmin
 
-from FuncionesBot import  ProcesartxtdeYoutube,DescargarVideodeYoutube,Agregarusuario,ProcesarDescargadeunFichero,DowlandFromTxt
+from FuncionesBot import DisallowUser ,ProcesartxtdeYoutube,DescargarVideodeYoutube,Agregarusuario,ProcesarDescargadeunFichero,DowlandFromTxt
 from nubapi import Contexto
 Entrada_de_la_Descaraga = 0 
 
 ChangeToken = 1
-
+BanUSEr=988
 Dowlandtxt = 100
 
 Dowland_Trance = 5
@@ -189,6 +189,22 @@ def AllowUser(update,conext):
 
         update.message.reply_text("No eres admin")
 
+    pass
+def banUser(update,context):
+
+    if(AreAdmin(update)):
+
+        update.message.reply_text("que usuario quieres banear")
+
+        return BanUSEr
+    else:
+
+        update.message.reply_text("No eres admin")
+
+    pass
+
+def BanearUsuario(update,context):
+    DisallowUser(update=update,context=context)
     pass
 
 def AddUser(update,context):
@@ -333,7 +349,8 @@ def main():
             CommandHandler('allow',AllowUser),
             CommandHandler('Dowlandtxt',downloadTxt),
             CommandHandler('cancel',Cancelartareas),
-            CommandHandler('Test',Test)
+            CommandHandler('Test',Test),
+            CommandHandler('ban',banUser)
         ],
         states=
         {
@@ -343,7 +360,8 @@ def main():
             youtubetxt:[MessageHandler(Filters.document,ProcessYutubetxt)],
             allowuser:[MessageHandler(Filters.text,AddUser)],
             Dowlandtxt:[MessageHandler(Filters.document,DowlandFromTxt)],
-            CancelTrace:[MessageHandler(Filters.text,CancelarTarea)]
+            CancelTrace:[MessageHandler(Filters.text,CancelarTarea)],
+            BanUSEr:[MessageHandler(Filters.text,BanearUsuario)]
         },
         
         fallbacks=[]

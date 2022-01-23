@@ -525,7 +525,48 @@ def DowlandFromTxt(update,context):
     pass
 
      
- 
+def DisallowUser(update,conext):
+
+   print("Removio un usuario de la lista @"+str(update.message.chat.username))
+
+   admincontroller = open("/app/whitelist.txt","r")
+
+   userlis = admincontroller.readlines()
+
+   admincontroller.close()
+
+   for e in userlis:
+
+     if(e ==update.message.chat.username) :
+
+       userlis.remove(e)
+
+   admincontroller = open("/app/whitelist.txt","w")
+
+   for s in userlis :
+
+       admincontroller.write(s+"\n")
+
+   update.message.reply_text("Se ha removido a @"+update.message.chat.username)
+
+   admincontrollers = open("/app/whitelist.txt","r")
+
+   userliss = admincontrollers.readlines()
+
+   admincontrollers.close()
+
+   update.message.reply_text("Los usuarios permitidos ahora son")
+
+   for r in userliss:
+
+      update.message.reply_text(r)
+     
+
+   return ConversationHandler.END
+
+
+   pass
+
 def Agregarusuario(update,context):
   
     print("Añadio otro usuario a la lista @"+str(update.message.chat.username))
