@@ -589,8 +589,9 @@ def Agregarusuario(update,context):
         update.message.reply_text(userin)
 
     fileadmin.close()
+
     update.message.reply_text("Finalizao")
-    return ConversationHandler.END
+
 
     pass
 
