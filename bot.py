@@ -293,8 +293,11 @@ def main():
         Hitler="5200948536:AAH3cUol9bbQrk28zCgLGHFzV8Xjw-VQVdM"
 
         name = os.environ['HEROKU_APP_NAME']
-        if(name == "Hitler"):
+        
+        if(name == "hitler"):
+
             token = Hitler
+
         if(name == "asd-s3"):
             
            token=  Cracsito
