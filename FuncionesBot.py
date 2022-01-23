@@ -564,13 +564,8 @@ def DisallowUser(update,context):
 
    for r in userliss:
 
-     if(CleanName(r)!=None):
-
-      update.message.reply_text(CleanName(r))
-     else:
-       update.message.reply_text(CleanName("None"))
-     
-
+      update.message.reply_text(r +":)")
+  
    update.message.reply_text("Finalizao")
 
    return ConversationHandler.END
@@ -592,14 +587,11 @@ def Agregarusuario(update,context):
     Listaadmin = fileadmin.readlines()
 
     update.message.reply_text("Los usuarios perimitidos ahora son :")
-    for r in  Listaadmin:
 
-     if(CleanName(r)!=None):
+    for userin in Listaadmin:
 
-      update.message.reply_text(CleanName(r))
-     else:
-       update.message.reply_text(CleanName("None"))
-     
+        update.message.reply_text(userin +":)")
+
     fileadmin.close()
 
     update.message.reply_text("Finalizao")
