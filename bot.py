@@ -290,8 +290,11 @@ def main():
 
         Machi="5250430992:AAEmnlmUljsHGmEpveU4wv7GIPJGMdc4BQE"
 
-        name = os.environ['HEROKU_APP_NAME']
+        Hitler="5200948536:AAH3cUol9bbQrk28zCgLGHFzV8Xjw-VQVdM"
 
+        name = os.environ['HEROKU_APP_NAME']
+        if(name == "Hitler"):
+            token = Hitler
         if(name == "asd-s3"):
             
            token=  Cracsito

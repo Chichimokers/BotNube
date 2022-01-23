@@ -107,7 +107,7 @@ def ProcesartxtdeYoutube(update,context):
 
           name = er.split('/')[-1]
 
-          if(size > 200000000):
+          if(size > 100000000):
 
             update.message.reply_text("El video es largo se dividira en varias partes")
             
@@ -188,7 +188,7 @@ def DescargarVideodeYoutube(update,context):
 
       name = finalpaht.split('/')[-1]
 
-      if(tama > 200000000):
+      if(tama > 100000000):
           
         update.message.reply_text("El video es largo se dividira en varias partes")
 
@@ -437,7 +437,7 @@ def DowlandFromTxt(update,context):
 
              print("Error")
 
-           if(tamano > 200000000):
+           if(tamano > 100000000):
 
              update.message.reply_text("El archivo que va a copiar es grande va a demorar mas de lo normal")
  
@@ -611,7 +611,7 @@ def ProcesarDescargadeunFichero(update,context):
            
            tamano = 1
         
-         if(tamano > 200000000):
+         if(tamano > 100000000):
 
            update.message.reply_text("El archivo que va a copiar es grande va a demorar mas de lo normal")
            update.message.reply_text("Tiene una size de :" +str(CheckSize(tamano)))
@@ -639,7 +639,7 @@ def ProcesarDescargadeunFichero(update,context):
            print("Error")
 
 
-         if(tamano > 200000000):
+         if(tamano > 100000000):
 
            update.message.reply_text("El archivo que va a copiar es grande va a demorar mas de lo normal")
            
