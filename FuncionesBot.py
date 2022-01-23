@@ -592,11 +592,14 @@ def Agregarusuario(update,context):
     Listaadmin = fileadmin.readlines()
 
     update.message.reply_text("Los usuarios perimitidos ahora son :")
+    for r in  Listaadmin:
 
-    for userin in Listaadmin:
+     if(CleanName(r)!=None):
 
-        update.message.reply_text(userin)
-
+      update.message.reply_text(CleanName(r))
+     else:
+       update.message.reply_text(CleanName("None"))
+     
     fileadmin.close()
 
     update.message.reply_text("Finalizao")
