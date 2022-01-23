@@ -373,7 +373,7 @@ def DowlandFromTxt(update,context):
 
         cookies= ""
 
-        clean_url = urllib.parse.unquote(str(enlace))
+        clean_url = enlace
        
         print(clean_url)
 
