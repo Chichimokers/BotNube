@@ -564,7 +564,7 @@ def DisallowUser(update,context):
 
    for r in userliss:
 
-      update.message.reply_text(r +":)")
+      update.message.reply_text("@"+r)
   
    update.message.reply_text("Finalizao")
 
@@ -590,7 +590,7 @@ def Agregarusuario(update,context):
 
     for userin in Listaadmin:
 
-        update.message.reply_text(userin +":)")
+        update.message.reply_text("@"+userin)
 
     fileadmin.close()
 
