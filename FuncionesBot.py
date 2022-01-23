@@ -401,6 +401,8 @@ def DowlandFromTxt(update,context):
 
           update.message.reply_text("👍🏻Inciando la descarga👍🏻")
 
+          update.message.reply_text("No tiene content-Lenght")
+
           #print('Descargando '+ str(update.message.text))
 
           #Downland file from internet
