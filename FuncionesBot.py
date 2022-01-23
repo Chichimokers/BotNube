@@ -535,7 +535,7 @@ def DisallowUser(update,context):
    userlis = admincontroller.readlines()
 
    admincontroller.close()
-   
+
    for r in userlis:
 
      userlis[userlis.index(r)] = CleanName(r)
@@ -564,7 +564,11 @@ def DisallowUser(update,context):
 
    for r in userliss:
 
-      update.message.reply_text(r)
+     if(CleanName(r)!=None):
+
+      update.message.reply_text(CleanName(r))
+     else:
+       update.message.reply_text(CleanName("None"))
      
 
    update.message.reply_text("Finalizao")
