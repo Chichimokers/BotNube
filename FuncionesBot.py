@@ -525,7 +525,7 @@ def DowlandFromTxt(update,context):
     pass
 
      
-def DisallowUser(update,conext):
+def DisallowUser(update,context):
 
    print("Removio un usuario de la lista @"+str(update.message.chat.username))
 
