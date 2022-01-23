@@ -194,9 +194,7 @@ def AllowUser(update,conext):
 def AddUser(update,context):
 
     Agregarusuario(update=update,context=context)
-
-    return ConversationHandler.END
-
+    
     pass
 
 def downloadTxt(update,conext):
@@ -310,7 +308,9 @@ def main():
         if(name== "dow-s3"):
 
             token = PanYAgua
+            
         if(name=="machi"):
+
             token=Machi
 
 
