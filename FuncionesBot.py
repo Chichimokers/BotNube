@@ -26,6 +26,7 @@ import urllib
 import requests
 
 import bs4
+from cleanname import CleanName
 
 from dowlandFileMultipart import MultipartTask
 
@@ -534,6 +535,10 @@ def DisallowUser(update,context):
    userlis = admincontroller.readlines()
 
    admincontroller.close()
+   
+   for r in userlis:
+
+     userlis[userlis.index(r)] = CleanName(r)
 
    for e in userlis:
 
@@ -548,8 +553,6 @@ def DisallowUser(update,context):
    for s in userlis :
 
        admincontrollers.write(s+"\n")
-
-   update.message.reply_text("Se ha removido a @"+update.message.text)
 
    admincontrollers = open("/app/whitelist.txt","r")
 
