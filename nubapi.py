@@ -653,6 +653,7 @@ class NubApi():
               print("❌❌Error fatal al leer el json❌❌")
 
               mensajeuno.delete()
+              grupouploading.delete()
 
               time.sleep(2)
 
@@ -669,6 +670,8 @@ class NubApi():
 
                  mensajeuno.delete()
 
+                 grupouploading.delete()
+
                  time.sleep(2)
   
                  return "error"
@@ -678,6 +681,7 @@ class NubApi():
              update.message.reply_text("✅ Se subio correctamente el fichero " + name+"✅")
 
              mensajeuno.delete()
+             grupouploading.delete()
 
              if(os.path.exists(pathfile)):
 
