@@ -557,7 +557,7 @@ class NubApi():
 
           mensajeuno = update.message.reply_text("Uploading 0%")
 
-          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(name) +" Uploading 0%"))
+          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name) +" Uploading 0%"))
 
           def upload_callback(monitor):
               
@@ -571,7 +571,7 @@ class NubApi():
 
               cambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
 
-              grupocambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
+              grupocambio = str("Uploading "+name+" "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
  
               print(s)
 
