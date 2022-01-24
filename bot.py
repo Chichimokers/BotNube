@@ -53,11 +53,15 @@ from os.path import basename
 from ChekAllows import EstasPermitiado , AreAdmin
 
 from FuncionesBot import DisallowUser ,ProcesartxtdeYoutube,DescargarVideodeYoutube,Agregarusuario,ProcesarDescargadeunFichero,DowlandFromTxt
+
 from nubapi import Contexto
+
 Entrada_de_la_Descaraga = 0 
 
 ChangeToken = 1
+
 BanUSEr=988
+
 Dowlandtxt = 100
 
 Dowland_Trance = 5

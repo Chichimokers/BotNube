@@ -34,6 +34,15 @@ from Filesize import CheckSize
 
 import json
 
+def Contexton(context):
+
+    global contexto
+
+    contexto = context
+
+
+    pass
+
 paths = os.path.dirname(os.path.abspath(__file__))
 
 lastporcent = "%"
