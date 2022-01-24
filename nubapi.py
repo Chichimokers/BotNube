@@ -557,7 +557,7 @@ class NubApi():
 
           mensajeuno = update.message.reply_text("Uploading 0%")
 
-          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(name) +" Downloading 0%"))
+          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(name) +" Uploading 0%"))
 
           def upload_callback(monitor):
               
