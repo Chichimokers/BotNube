@@ -556,7 +556,9 @@ class NubApi():
           update.message.reply_text("La longitud del arhcivo es :"+str(tamanofinal))
 
           mensajeuno = update.message.reply_text("Uploading 0%")
-  
+
+          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(name) +" Downloading 0%"))
+
           def upload_callback(monitor):
               
             s = "Se ha subido " + CheckSize(int(monitor.bytes_read)) + " de "+ tamanofinal
@@ -568,6 +570,8 @@ class NubApi():
               porcent = int(monitor.bytes_read/size*100)
 
               cambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
+
+              grupocambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
  
               print(s)
 
@@ -583,8 +587,11 @@ class NubApi():
                          
                          lastporcent = str(porcent)
 
+
                          mensajeuno.text = cambio
-                         
+                         grupouploading.text = grupocambio
+
+                         grupouploading.edit_text(grupocambio)
                          mensajeuno.edit_text(cambio)
 
 
