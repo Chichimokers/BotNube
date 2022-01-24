@@ -35,7 +35,7 @@ from Filesize import CheckSize
 
 import json
 
-def Contexton(context):
+def Contexto(context):
 
     global contexto
 
