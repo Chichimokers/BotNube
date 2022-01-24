@@ -114,7 +114,7 @@ def dowland(url,update,cookies):
                print(completename)
        
 
-               DowlandProgress(bytescopiados=copaidos,totalsize=int(r.headers.get("Content-Length")),group=grupouploading,mensaje=hola,context=contexto,name=completename)
+               DowlandProgress(bytescopiados=copaidos,totalsize=int(100000000000000),group=grupouploading,mensaje=hola,context=contexto,name=completename)
 
                sys.stdout.flush()    
          hola.edit_text("Descarga Completada :)")        
