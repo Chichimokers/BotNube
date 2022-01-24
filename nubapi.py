@@ -456,7 +456,7 @@ class NubApi():
 
         pass
 
-    def UploadFile(self,pathfile :str,update):
+    def UploadFilewithBlog(self,pathfile :str,update):
 
 
           name = pathfile.split("/")[-1]
@@ -605,6 +605,230 @@ class NubApi():
               pass
 
           values = {'sesskey': sesskey,'repo_id':'4','author':self.Autor,'savepath':'/','title':name,'itemid':query["itemid"],'ctx_id':query["ctx_id"],"repo_upload_file": (name,open(pathfile,'rb'))}
+       
+          e = MultipartEncoder(fields=values)
+
+          m = MultipartEncoderMonitor(e, upload_callback)
+
+          headers = {"Content-Type": m.content_type}
+
+          respuesta = ""
+
+          respuesta = requests.post(self.Moodle+"/repository/repository_ajax.php?action=upload",cookies=self.Session.cookies,data=m,headers=headers)
+
+  
+         #print("###########<<<<<<<<<Cookie de Upload>>>>>>>>>>>>>>>#############")
+        
+         #for a in self.Session.cookies:
+
+         #    print(a)
+ 
+
+          print("###########Request URL#############")
+
+          print(respuesta.request.url)
+
+         #print("###########Request Headers#############")
+
+         #print(respuesta.request.headers)
+
+        # print("######Codigo de Respuesta########")
+
+         #print(respuesta.status_code)  
+ 
+         #print(respuesta.headers)
+
+          print("###########Request Content#############")
+
+          print(respuesta.text)
+
+          try:
+
+             er = json.loads(respuesta.text)
+          
+          except:
+
+              update.message.reply_text("❌❌Error al leer el Json❌❌")
+
+              print("❌❌Error fatal al leer el json❌❌")
+
+              mensajeuno.delete()
+              grupouploading.delete()
+
+              time.sleep(2)
+
+              return "error"
+
+            
+          try: 
+            
+             if(er["error"]):
+
+                 print("❌❌!!!!!!!!!!!!!!Error fatal al subir arhcivo!!!!!!!!!!!!!❌❌")
+                
+                 update.message.reply_text("❌❌Error fatal al subir❌❌")
+
+                 mensajeuno.delete()
+
+                 grupouploading.delete()
+
+                 time.sleep(2)
+  
+                 return "error"
+
+          except:
+
+             update.message.reply_text("✅ Se subio correctamente el fichero " + name+"✅")
+
+             mensajeuno.delete()
+             grupouploading.delete()
+
+             if(os.path.exists(pathfile)):
+
+                 print("Existe")
+
+                 os.remove(pathfile)
+            
+
+             else:
+
+                 print("ya el arhcivo fue borrado")
+                 
+             time.sleep(2)
+
+             return respuesta.text
+
+
+          pass
+ 
+    def UploadFile(self,pathfile :str,update):
+
+
+          name = pathfile.split("/")[-1]
+
+          #with  as file:
+        
+            #data = file.read()
+         #name = pathfile.split("\\")[-1]
+
+ 
+          longitud = open(pathfile,'rb') 
+
+          datos = longitud.read()
+
+          size = len(datos)
+
+          tamanofinal =str(CheckSize(len(datos)))
+
+          print("El size del archivo es "+ str(tamanofinal))
+
+          datos = 0
+
+          longitud.close()
+
+          iles = {"repo_upload_file": open(pathfile,'rb')}
+  
+          try:
+
+            contenido  = self.Session.get(self.Moodle+"user/files.php")
+ 
+            er = bs4.BeautifulSoup(contenido.text,'html.parser')
+
+            sesky = er.find('input',{'name':'sesskey'})['value']
+
+            print(sesky)
+
+          except:
+              
+              print("No se pudo obtener la sesskey")
+              
+              return "error"
+
+          if(er != None):
+
+            ctssxid = er.find('object',{'type':'text/html'})['data']
+
+          else:
+
+              update.message.reply_text("No se pudo Obtener el data para sacar ctxid y itemid")
+        
+              return "error"
+
+          if(ctssxid !=None):
+
+           spliteado = ctssxid.split('&')
+
+           itemid = spliteado[2].split('=')[1]
+
+           ctxid = spliteado[7].split('=')[1]
+
+           print(ctxid ,itemid)
+
+          else:
+
+              print("Como no se pudo obtener el data para item y ctx no se sacaran")
+
+              return "error"
+ 
+          print("Subiendo "+pathfile)
+        
+
+          if(update != None):
+            
+            update.message.reply_text("Se esta subiendo el archivo "+ str(name))
+
+          update.message.reply_text("La longitud del arhcivo es :"+str(tamanofinal))
+
+          mensajeuno = update.message.reply_text("Uploading 0%")
+
+          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name) +" Uploading 0%"))
+
+          def upload_callback(monitor):
+              
+            s = "Se ha subido " + CheckSize(int(monitor.bytes_read)) + " de "+ tamanofinal
+          
+            now = datetime.now()
+
+            if(int(monitor.bytes_read) != 0 ):
+             
+              porcent = int(monitor.bytes_read/size*100)
+
+              cambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
+
+              grupocambio = str("Uploading "+name+" "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
+ 
+              print(s)
+
+              if(mensajeuno.text.split(" ")[-1] != str(str(porcent)+"%")):
+ 
+                   lista = [1,10,15,20,30,35,40,50,60,70,80,90,100]
+
+                   for e in lista:
+
+                     if(e == int(porcent)):
+
+                         print("Se cambio")
+                         
+                         lastporcent = str(porcent)
+
+
+                         mensajeuno.text = cambio
+                         grupouploading.text = grupocambio
+
+                         grupouploading.edit_text(grupocambio)
+                         mensajeuno.edit_text(cambio)
+
+
+               
+              else :
+                 print("no se cambio")
+
+              
+        
+
+              pass
+
+          values = {'sesskey': sesky,'repo_id':'4','author':self.Autor,'savepath':'/','title':name,'itemid':itemid,'ctx_id':ctxid,"repo_upload_file": (name,open(pathfile,'rb'))}
        
           e = MultipartEncoder(fields=values)
 
