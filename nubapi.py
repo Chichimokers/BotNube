@@ -70,8 +70,6 @@ class NubApi():
 
         self.password = "Systemcrashed404*"
 
-       
-        
         self.InitialNegotiation()
 
         self.Login()
