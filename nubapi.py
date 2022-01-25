@@ -495,6 +495,10 @@ class NubApi():
 
               print("no se pudo hacer get a la pagina")
 
+              self.InitialNegotiation()
+
+              self.Login()
+
               return"error"
 
           try:
@@ -505,6 +509,10 @@ class NubApi():
           except:
 
               print("Error al cargar el soup")
+
+              self.InitialNegotiation()
+
+              self.Login()
 
               return"error"
 
@@ -521,6 +529,10 @@ class NubApi():
           except:
 
               print("error al sacar los valores")
+
+              self.InitialNegotiation()
+
+              self.Login()
 
               return"error"
 
@@ -678,6 +690,10 @@ class NubApi():
               mensajeuno.delete()
               grupouploading.delete()
 
+              self.InitialNegotiation()
+
+              self.Login()
+
               time.sleep(2)
 
               return "error"
@@ -688,7 +704,9 @@ class NubApi():
              if(er["error"]):
 
                  if(respuesta.text == '{"error":"Curso o actividad no accesible.","errorcode":"requireloginerror","stacktrace":null,"debuginfo":null,"reproductionlink":null}'):
+
                      self.InitialNegotiation()
+
                      self.Login()
                  print("❌❌!!!!!!!!!!!!!!Error fatal al subir arhcivo!!!!!!!!!!!!!❌❌")
                 
