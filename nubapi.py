@@ -612,7 +612,7 @@ class NubApi():
 
               if(mensajeuno.text.split(" ")[-1] != str(str(porcent)+"%")):
  
-                   lista = [100]
+                   lista = [1,10,30,40,60,80,90,100]
 
                    for e in lista:
 
