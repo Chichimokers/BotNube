@@ -68,6 +68,12 @@ class NubApi():
         self.username = "aoperez"
 
         self.password = "any.0006"
+                
+        self.InitialNegotiation()
+
+        time.sleep(1)
+
+        self.Login()
 
         pass
 
@@ -459,12 +465,7 @@ class NubApi():
         pass
 
     def UploadFile(self,pathfile :str,update):
-          
-          self.InitialNegotiation()
-
-          time.sleep(1)
-
-          self.Login()
+  
 
           name = pathfile.split("/")[-1]
 
@@ -653,7 +654,7 @@ class NubApi():
 
           respuesta = ""
 
-          respuesta = requests.post(self.Moodle+"/repository/repository_ajax.php?action=upload",cookies=self.Session.cookies,data=m,headers=headers)
+          respuesta =self.Session.post(self.Moodle+"/repository/repository_ajax.php?action=upload",data=m,headers=headers)
 
   
          #print("###########<<<<<<<<<Cookie de Upload>>>>>>>>>>>>>>>#############")
