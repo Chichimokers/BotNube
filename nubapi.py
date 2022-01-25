@@ -54,8 +54,6 @@ class NubApi():
 
         self.Session = requests.Session()
 
-        self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
-
         self.Moodle = "https://"+"moodle.uclv.edu.cu"+"/"
 
         self.urls = self.Moodle+"login/index.php"
@@ -492,7 +490,7 @@ class NubApi():
 
           print(fileurl)
 
-          respass = requests.get(fileurl,cookies=self.Session.cookies)
+          respass = self.Session.get(fileurl)
 
           if(respass.status_code != 200):
 
@@ -528,8 +526,6 @@ class NubApi():
           except:
 
               print(respass.text)
-
-              print(soup.find('object',attrs={'type':'text/html'})['data'])
 
               print("error al sacar el querry ")
               
