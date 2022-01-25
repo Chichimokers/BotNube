@@ -69,8 +69,6 @@ class NubApi():
 
         self.password = "any.0006"
 
-        self.InitialNegotiation()
-
         pass
 
     def GetDashBoard(self):
@@ -461,6 +459,8 @@ class NubApi():
         pass
 
     def UploadFile(self,pathfile :str,update):
+          
+          self.InitialNegotiation()
 
           time.sleep(1)
 
