@@ -536,8 +536,12 @@ class NubApi():
           except:
             
               print(respass.text)
+              
               print(respass.status_code)
+
               print("error al sacar el querry ")
+
+              self.Login()
 
               time.sleep(2)
 
