@@ -499,7 +499,9 @@ class NubApi():
           try:
 
             soup = bs4.BeautifulSoup(respass.text,'html.parser')
-            
+
+            print(respass.text)
+
           except:
 
               print("Error al cargar el soup")
