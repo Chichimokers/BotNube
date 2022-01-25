@@ -70,9 +70,6 @@ class NubApi():
 
         self.password = "amr290501**"
 
-        self.InitialNegotiation()
-
-        self.Login()
 
         pass
 
