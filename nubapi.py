@@ -95,6 +95,7 @@ class NubApi():
           er = bs4.BeautifulSoup(contenido,'html.parser')
 
           tokelonginer = er.find('input',{'name':'logintoken'})['value']
+          
 
           self.token = tokelonginer
       
