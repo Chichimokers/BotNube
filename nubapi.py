@@ -514,23 +514,13 @@ class NubApi():
 
               return"error"
 
-          try:
 
-            sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
-
-            print(sesskey)
-            
-          except:
-
-              print("Error al sacar el sesskey")
-
-              
-              time.sleep(2)
-
-              return "error"
 
           try:
             query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
+
+            
+            sesskey  =  query["sesskey"]
             
             print(query)
             
