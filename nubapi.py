@@ -156,6 +156,7 @@ class NubApi():
           print(respuesta)
 
           print(respuesta.links)
+
           er = bs4.BeautifulSoup(respuesta.text,'html.parser')
  
 
@@ -496,16 +497,20 @@ class NubApi():
 
               print("no se pudo hacer get a la pagina")
 
+              
+              time.sleep(2)
+
               return"error"
 
           try:
 
             soup = bs4.BeautifulSoup(respass.text,'html.parser')
-
             
           except:
 
               print("Error al cargar el soup")
+
+              time.sleep(2)
 
               return"error"
 
@@ -515,13 +520,26 @@ class NubApi():
 
             print(sesskey)
             
+          except:
+
+              print("Error al sacar el sesskey")
+
+              
+              time.sleep(2)
+
+              return "error"
+
+          try:
             query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
             
             print(query)
             
           except:
 
-              print("error al sacar los valores")
+              print("error al sacar el querry ")
+
+              
+              time.sleep(2)
 
               return"error"
 
