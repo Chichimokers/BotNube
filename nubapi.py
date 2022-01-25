@@ -498,10 +498,6 @@ class NubApi():
 
               print("no se pudo hacer get a la pagina")
 
-              self.InitialNegotiation()
-
-              self.Login()
-
               return"error"
 
           try:
@@ -716,7 +712,7 @@ class NubApi():
              update.message.reply_text("✅ Se subio correctamente el fichero " + name+"✅")
 
              mensajeuno.delete()
-             
+
              grupouploading.delete()
 
              if(os.path.exists(pathfile)):
