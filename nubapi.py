@@ -71,6 +71,7 @@ class NubApi():
         self.password = "amr290501**"
 
 
+
         pass
 
     def GetDashBoard(self):
