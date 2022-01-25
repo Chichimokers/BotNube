@@ -56,7 +56,7 @@ class NubApi():
 
         self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
 
-        self.Moodle = "https://"+"moodle.uclv.edu.cu"+"/"
+        self.Moodle = "https://"+"cursos.uo.edu.cu"+"/"
 
         self.urls = self.Moodle+"login/index.php"
 
@@ -66,9 +66,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "aoperez"
+        self.username = "ernestico"
 
-        self.password = "any.0006"
+        self.password = "291203Er*"
 
         self.InitialNegotiation()
 
@@ -452,7 +452,7 @@ class NubApi():
 
         pass
 
-    def UploadFile(self,pathfile :str,update):
+    def UploadFllile(self,pathfile :str,update):
 
           name = pathfile.split("/")[-1]
 
@@ -726,7 +726,7 @@ class NubApi():
 
           pass
  
-    def UploadFilsse(self,pathfile :str,update):
+    def UploadFile(self,pathfile :str,update):
 
 
           name = pathfile.split("/")[-1]
