@@ -687,6 +687,9 @@ class NubApi():
             
              if(er["error"]):
 
+                 if(respuesta.text == '{"error":"Curso o actividad no accesible.","errorcode":"requireloginerror","stacktrace":null,"debuginfo":null,"reproductionlink":null}'):
+                     self.InitialNegotiation()
+                     self.Login()
                  print("❌❌!!!!!!!!!!!!!!Error fatal al subir arhcivo!!!!!!!!!!!!!❌❌")
                 
                  update.message.reply_text("❌❌Error fatal al subir❌❌")
