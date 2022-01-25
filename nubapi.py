@@ -114,6 +114,8 @@ class NubApi():
 
          print("Error al obtener logintken")
 
+         time.sleep(2)
+
          self.InitialNegotiation()
 
         pass
@@ -166,6 +168,8 @@ class NubApi():
         except:
             
            print("Ha ocurrido un Error al loguearse en la nube")
+
+           time.sleep(2)
 
            self.Login()
 
