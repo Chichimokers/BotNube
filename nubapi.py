@@ -1,4 +1,4 @@
-from os import path
+from os import path, pipe
 import re
 from typing import cast
 
@@ -483,15 +483,24 @@ class NubApi():
 
 
           try:
-            fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php'
+
+            fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php?userid=' + self.userid
+
+            print(fileurl)
 
             respa = self.Session.get(fileurl)
+
+         
         
             soup = bs4.BeautifulSoup(respa.text,'html.parser')
 
             sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
 
+            print(sesskey)
+            
             query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
+            
+            print(query)
             
           except:
 
