@@ -490,9 +490,21 @@ class NubApi():
 
             respass = self.Session.get(fileurl)
 
-        
-            soup = bs4.BeautifulSoup(respass.text,'html.parser')
+          except:
 
+              print("no se pudo hacer get a la pagina")
+
+              return"error"
+
+          try:
+
+            soup = bs4.BeautifulSoup(respass.text,'html.parser')
+          except:
+
+              print("Error al cargar el soup")
+
+              return"error"
+          try:
             sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
 
             print(sesskey)
@@ -503,7 +515,7 @@ class NubApi():
             
           except:
 
-              print("no se pudo obtener")
+              print("error al sacar los valores")
 
               return"error"
 
