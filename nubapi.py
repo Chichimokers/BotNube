@@ -500,6 +500,7 @@ class NubApi():
           try:
 
             soup = bs4.BeautifulSoup(respass.text,'html.parser')
+
             
           except:
 
