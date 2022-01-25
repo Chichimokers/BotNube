@@ -68,12 +68,11 @@ class NubApi():
         self.username = "aoperez"
 
         self.password = "any.0006"
-                
+
         self.InitialNegotiation()
 
-        time.sleep(1)
-
         self.Login()
+
 
         pass
 
@@ -95,7 +94,6 @@ class NubApi():
           er = bs4.BeautifulSoup(contenido,'html.parser')
 
           tokelonginer = er.find('input',{'name':'logintoken'})['value']
-          
 
           self.token = tokelonginer
       
@@ -175,7 +173,10 @@ class NubApi():
 
            time.sleep(2)
 
+           self.InitialNegotiation()
+
            self.Login()
+
 
         pass
 
@@ -466,7 +467,7 @@ class NubApi():
         pass
 
     def UploadFile(self,pathfile :str,update):
-  
+          
 
           name = pathfile.split("/")[-1]
 
@@ -655,7 +656,7 @@ class NubApi():
 
           respuesta = ""
 
-          respuesta =self.Session.post(self.Moodle+"/repository/repository_ajax.php?action=upload",data=m,headers=headers)
+          respuesta = requests.post(self.Moodle+"/repository/repository_ajax.php?action=upload",cookies=self.Session.cookies,data=m,headers=headers)
 
   
          #print("###########<<<<<<<<<Cookie de Upload>>>>>>>>>>>>>>>#############")
