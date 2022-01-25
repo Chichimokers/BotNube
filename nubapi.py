@@ -487,7 +487,7 @@ class NubApi():
 
             print(fileurl)
 
-            respass = self.Session.get(fileurl)
+            respass = requests.get(fileurl,cookies=self.Session.cookies)
 
           except:
 
