@@ -499,12 +499,15 @@ class NubApi():
           try:
 
             soup = bs4.BeautifulSoup(respass.text,'html.parser')
+            
           except:
 
               print("Error al cargar el soup")
 
               return"error"
+
           try:
+
             sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
 
             print(sesskey)
