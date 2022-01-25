@@ -196,6 +196,7 @@ class NubApi():
         pass
 
     def extractQuery(self,url):
+
         tokens = str(url).split('?')[1].split('&')
         retQuery = {}
         for q in tokens:
@@ -515,20 +516,24 @@ class NubApi():
               return"error"
 
 
-
           try:
-            query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
 
+            print(soup.find('object',attrs={'type':'text/html'})['data'])
+
+            query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
             
             sesskey  =  query["sesskey"]
             
             print(query)
             
           except:
+              
+              print(soup.find('object',attrs={'type':'text/html'})['data'])
 
               print("error al sacar el querry ")
-
               
+              print(query)
+
               time.sleep(2)
 
               return"error"
