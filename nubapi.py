@@ -157,9 +157,6 @@ class NubApi():
 
           print(respuesta.links)
 
-          er = bs4.BeautifulSoup(respuesta.text,'html.parser')
- 
-
            #  for a in self.Session.cookies:
 
         except:
