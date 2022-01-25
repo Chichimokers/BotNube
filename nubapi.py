@@ -481,7 +481,7 @@ class NubApi():
 
           try:
 
-            fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php'
+            fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php?userid=' + self.userid
 
             print(fileurl)
 
