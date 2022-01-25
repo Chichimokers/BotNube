@@ -66,11 +66,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "alvmorales"
+        self.username = "aoperez"
 
-        self.password = "amr290501**"
-
-
+        self.password = "any.0006"
 
         pass
 
