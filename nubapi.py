@@ -459,6 +459,14 @@ class NubApi():
 
     def UploadFile(self,pathfile :str,update):
 
+          time.sleep(0.5)
+
+          self.InitialNegotiation()
+
+          time.sleep(0.5)
+
+          self.Login()
+
           name = pathfile.split("/")[-1]
 
           #with  as file:
@@ -524,12 +532,10 @@ class NubApi():
             print(query)
             
           except:
-
+            
               print(respass.text)
-
+              print(respass.status_code)
               print("error al sacar el querry ")
-              
-              print(query)
 
               time.sleep(2)
 
