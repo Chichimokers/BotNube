@@ -486,19 +486,18 @@ class NubApi():
           iles = {"repo_upload_file": open(pathfile,'rb')}
 
 
-          try:
+          
 
-            fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php?userid=' + self.userid
+          fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php?userid=' + self.userid
 
-            print(fileurl)
+          print(fileurl)
 
-            respass = requests.get(fileurl,cookies=self.Session.cookies)
+          respass = requests.get(fileurl,cookies=self.Session.cookies)
 
-          except:
+          if(respass.status_code != 200):
 
               print("no se pudo hacer get a la pagina")
-
-              
+  
               time.sleep(2)
 
               return"error"
@@ -527,7 +526,9 @@ class NubApi():
             print(query)
             
           except:
-              
+
+              print(respass.text)
+
               print(soup.find('object',attrs={'type':'text/html'})['data'])
 
               print("error al sacar el querry ")
