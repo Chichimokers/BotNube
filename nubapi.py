@@ -113,7 +113,9 @@ class NubApi():
  
             print(a)
         except:
+
          print("Error al obtener logintken")
+
          self.InitialNegotiation()
 
         pass
@@ -125,7 +127,7 @@ class NubApi():
           # print("##########DATOS##########")
 
           data = {'anchor':'','logintoken': self.token, 'username': self.username, 'password': self.password}
-          
+
           #data = {'anchor':'', 'username': self.username, 'password': self.password}
 
           # data = {'username': 'titi', 'password': 'titicloud123'}
@@ -511,10 +513,6 @@ class NubApi():
 
               print("Error al cargar el soup")
 
-              self.InitialNegotiation()
-
-              self.Login()
-
               return"error"
 
           try:
@@ -530,10 +528,6 @@ class NubApi():
           except:
 
               print("error al sacar los valores")
-
-              self.InitialNegotiation()
-
-              self.Login()
 
               return"error"
 
@@ -691,10 +685,6 @@ class NubApi():
               mensajeuno.delete()
               grupouploading.delete()
 
-              self.InitialNegotiation()
-
-              self.Login()
-
               time.sleep(2)
 
               return "error"
@@ -726,6 +716,7 @@ class NubApi():
              update.message.reply_text("✅ Se subio correctamente el fichero " + name+"✅")
 
              mensajeuno.delete()
+             
              grupouploading.delete()
 
              if(os.path.exists(pathfile)):
