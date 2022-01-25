@@ -456,6 +456,8 @@ class NubApi():
 
     def UploadFile(self,pathfile :str,update):
 
+          self.InitialNegotiation()
+
           self.Login()
 
           name = pathfile.split("/")[-1]
