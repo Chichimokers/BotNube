@@ -457,7 +457,7 @@ class NubApi():
     def UploadFile(self,pathfile :str,update):
 
           self.Login()
-          
+
           name = pathfile.split("/")[-1]
 
           #with  as file:
@@ -500,9 +500,7 @@ class NubApi():
           try:
 
             soup = bs4.BeautifulSoup(respass.text,'html.parser')
-
-            print(respass.text)
-
+            
           except:
 
               print("Error al cargar el soup")
