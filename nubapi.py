@@ -488,11 +488,10 @@ class NubApi():
 
             print(fileurl)
 
-            respa = self.Session.get(fileurl)
+            respass = self.Session.get(fileurl)
 
-         
         
-            soup = bs4.BeautifulSoup(respa.text,'html.parser')
+            soup = bs4.BeautifulSoup(respass.text,'html.parser')
 
             sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
 
