@@ -766,6 +766,10 @@ class NubApi():
           except:
               
               print("No se pudo obtener la sesskey")
+
+              
+              time.sleep(2)
+
               
               return "error"
 
@@ -826,7 +830,7 @@ class NubApi():
 
               if(mensajeuno.text.split(" ")[-1] != str(str(porcent)+"%")):
  
-                   lista = [1,10,30,40,60,80,100]
+                   lista = [1,20,40,60,80,100]
 
                    for e in lista:
 
