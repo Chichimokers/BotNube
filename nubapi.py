@@ -70,7 +70,8 @@ class NubApi():
         self.password = "any.0006"
 
         self.InitialNegotiation()
-        
+        self.Login()
+
         pass
 
     def GetDashBoard(self):
@@ -110,8 +111,7 @@ class NubApi():
  
             print(a)
 
-          self.Login()
-
+    
         except:
 
          print("Error al obtener logintken")
@@ -173,7 +173,7 @@ class NubApi():
 
            time.sleep(2)
 
-           self.InitialNegotiation()
+           self.Login()
 
 
         pass
