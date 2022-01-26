@@ -83,7 +83,7 @@ class NubApi():
     def InitialNegotiation(self):
 
         try:
-          respuesta = self.Session.get(url=self.urls)
+          respuesta = requests.get(url=self.urls)
   
           contenido  = respuesta.content
 
@@ -466,7 +466,7 @@ class NubApi():
     def UploadFile(self,pathfile :str,update):
           
           self.InitialNegotiation()
-          
+
           name = pathfile.split("/")[-1]
 
           #with  as file:
@@ -539,8 +539,6 @@ class NubApi():
               print(respass.status_code)
 
               print("error al sacar el querry ")
-
-              self.Login()
 
               time.sleep(2)
 
@@ -698,6 +696,7 @@ class NubApi():
               print("❌❌Error fatal al leer el json❌❌")
 
               mensajeuno.delete()
+
               grupouploading.delete()
 
               time.sleep(2)
@@ -709,11 +708,6 @@ class NubApi():
             
              if(er["error"]):
 
-                 if(respuesta.text == '{"error":"Curso o actividad no accesible.","errorcode":"requireloginerror","stacktrace":null,"debuginfo":null,"reproductionlink":null}'):
-
-                     self.InitialNegotiation()
-
-                     self.Login()
                  print("❌❌!!!!!!!!!!!!!!Error fatal al subir arhcivo!!!!!!!!!!!!!❌❌")
                 
                  update.message.reply_text("❌❌Error fatal al subir❌❌")
