@@ -83,7 +83,7 @@ class NubApi():
     def InitialNegotiation(self):
 
         try:
-          respuesta = requests.get(url=self.urls)
+          respuesta = self.Session.get(url=self.urls)
   
           contenido  = respuesta.content
 
