@@ -54,7 +54,7 @@ class NubApi():
 
         self.Session = requests.Session()
 
-        self.Moodle = "https://"+"moodle.uclv.edu.cu"+"/"
+        self.Moodle = "https://"+"cursos.uo.edu.cu"+"/"
 
         self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
         self.urls = self.Moodle+"login/index.php"
@@ -65,9 +65,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "aoperez"
+        self.username = "ernestico"
 
-        self.password = "any.0006"
+        self.password = "291203Er*"
 
         self.InitialNegotiation()
 
@@ -173,9 +173,7 @@ class NubApi():
            time.sleep(2)
 
 
-
         pass
-
     def ObtenerToken(self):
 
         valores = {'username':self.username,'password':self.password,'service':'moodle_mobile_app'}
@@ -197,7 +195,6 @@ class NubApi():
            return s["privatetoken"]
 
         pass
-
     def extractQuery(self,url):
 
         tokens = str(url).split('?')[1].split('&')
@@ -209,7 +206,6 @@ class NubApi():
             except:
                  retQuery[qspl[0]] = None
         return retQuery
-
     def SalverEvidencia(self,evidence):
 
         evidenceurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php?id='+evidence['id']+'&userid='+self.userid+'&return=list'
@@ -237,7 +233,6 @@ class NubApi():
         print(evidence)
 
         return evidence
-
     def CrearEvidencia(self,name):
 
         name=name
@@ -277,7 +272,6 @@ class NubApi():
         return {'name':name,'desc':desc,'id':evidenceid,'url':resp.url,'files':[]}
 
         pass
-
     def DowlandFile(self,url):
 
         clean_url = parse.unquote(url)
@@ -302,8 +296,7 @@ class NubApi():
                 
                 print("Se han copiado "+CheckSize(bytescopiados))
 
-        f.close()
-        
+        f.close()      
     def getDirectUrl(self,url):
 
         tokens = str(url).split('/')
@@ -320,7 +313,6 @@ class NubApi():
         ret = html[index:(index+max)]
 
         return str(ret).replace('client_id":"','')
-
     def UploadFileBlog(self,pathfile :str,update):
 
         name = pathfile.split("/")[-1]
@@ -461,7 +453,6 @@ class NubApi():
 
 
         pass
-
     def UploadFile(self,pathfile :str,update):
           
 
