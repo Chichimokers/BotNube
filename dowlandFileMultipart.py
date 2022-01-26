@@ -204,6 +204,8 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
     
 
     def RetryEror(final,name,update,multiple,nube):
+        
+        nube = NubApi()
 
         asd = UploadFile(final=file,name=filenamebase,update=update,multiple=True,nube=nube,context=context)
 

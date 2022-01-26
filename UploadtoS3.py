@@ -25,6 +25,8 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
        filepath = "/app/"+name+".json" 
 
        respuesta = ""
+       
+       nube = NubApi()
 
        respuesta = nube.UploadFile(final,update=update)
 

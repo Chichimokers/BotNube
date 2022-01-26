@@ -86,7 +86,8 @@ def ProcesartxtdeYoutube(update,context):
 
         fichero= ""
 
-  
+        nube =NubApi()
+
         fichero = UploadFile(files,names,update,True,nube,context=context)
 
 
@@ -200,6 +201,8 @@ def DescargarVideodeYoutube(update,context):
         flista = SplitaFile(finalpaht)
 
         def RetryError():
+
+          nube = NubApi()
 
           respuesta =   respuesta = UploadFile(er,name,update,True,nube,context=context)
 
@@ -342,7 +345,8 @@ def DowlandFromTxt(update,context):
 
         fichero= ""
 
-  
+        nube = NubApi()
+        
         fichero = UploadFile(files,names,update,True,nube,context=context)
 
 

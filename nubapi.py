@@ -69,7 +69,8 @@ class NubApi():
 
         self.password = "any.0006"
 
-
+        self.InitialNegotiation()
+        
         pass
 
     def GetDashBoard(self):
