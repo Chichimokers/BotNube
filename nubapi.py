@@ -9,7 +9,7 @@ from bs4.element import ProcessingInstruction
 
 import requests
 
-
+from telegram import ParseMode
 import parser 
 
 import time
@@ -74,7 +74,6 @@ class NubApi():
         self.Login()
 
         pass
-
     def GetDashBoard(self):
 
         respuesta = requests.get(self.Moodle+"/my",cookies=self.Session.cookies)
@@ -82,7 +81,6 @@ class NubApi():
         print(respuesta.text)
 
         print(respuesta.url)
-
     def InitialNegotiation(self):
 
         try:
@@ -120,7 +118,6 @@ class NubApi():
          time.sleep(2)
 
         pass
-
     def Login(self):
 
         try:
@@ -587,9 +584,9 @@ class NubApi():
 
           update.message.reply_text("La longitud del arhcivo es :"+str(tamanofinal))
 
-          mensajeuno = update.message.reply_text("Uploading 0%")
+          mensajeuno = update.message.reply_text("Uploading")
 
-          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name) +" Uploading 0%"))
+          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name)))
 
           def upload_callback(monitor):
               
@@ -597,44 +594,11 @@ class NubApi():
           
             now = datetime.now()
 
-            if(int(monitor.bytes_read) != 0 ):
-             
-              porcent = int(monitor.bytes_read/size*100)
-
-              cambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
-
-              grupocambio = str("Uploading "+name+" "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
- 
-              print(s)
-
-              if(mensajeuno.text.split(" ")[-1] != str(str(porcent)+"%")):
- 
-                   lista = [100]
-
-                   for e in lista:
-
-                     if(e == int(porcent)):
-
-                         print("Se cambio")
-                         
-                         lastporcent = str(porcent)
+            print(s)
 
 
-                         mensajeuno.text = cambio
-                         grupouploading.text = grupocambio
-
-                         grupouploading.edit_text(grupocambio)
-                         mensajeuno.edit_text(cambio)
-
-
-               
-              else :
-                 print("no se cambio")
-
-              
-        
-
-              pass
+    
+            pass
 
           values = {'sesskey': sesskey,'repo_id':'4','author':self.Autor,'savepath':'/','title':name,'itemid':query["itemid"],'ctx_id':query["ctx_id"],"repo_upload_file": (name,open(pathfile,'rb'))}
        
@@ -734,7 +698,6 @@ class NubApi():
 
 
           pass
- 
     def UploadFilse(self,pathfile :str,update):
 
 
@@ -819,7 +782,7 @@ class NubApi():
 
           mensajeuno = update.message.reply_text("Uploading 0%")
 
-          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name) +" Uploading 0%"))
+          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("<b>Se esta subiendo "+str(name) +" Uploading 0%</b>"),parse_mode=ParseMode.HTML)
 
           def upload_callback(monitor):
               
@@ -837,25 +800,15 @@ class NubApi():
  
               print(s)
 
-              if(mensajeuno.text.split(" ")[-1] != str(str(porcent)+"%")):
- 
-                   lista = [1,20,40,60,80,100]
+              try:
+          
+               grupouploading.edit_text(grupocambio)
 
-                   for e in lista:
+               mensajeuno.edit_text(cambio)
 
-                     if(e == int(porcent)):
+              except:
 
-                         print("Se cambio")
-                         
-                         lastporcent = str(porcent)
-
-
-                         mensajeuno.text = cambio
-                         grupouploading.text = grupocambio
-
-                         grupouploading.edit_text(grupocambio)
-                         mensajeuno.edit_text(cambio)
-
+                  print("Error al cambiar el mensaje")
 
                
               else :
