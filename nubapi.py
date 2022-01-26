@@ -70,7 +70,6 @@ class NubApi():
         self.password = "any.0006"
 
 
-
         pass
 
     def GetDashBoard(self):
@@ -109,6 +108,9 @@ class NubApi():
           for a in self.Session.cookies:
  
             print(a)
+
+          self.Login()
+
         except:
 
          print("Error al obtener logintken")
@@ -171,8 +173,6 @@ class NubApi():
            time.sleep(2)
 
            self.InitialNegotiation()
-
-           self.Login()
 
 
         pass
@@ -465,10 +465,12 @@ class NubApi():
 
     def UploadFile(self,pathfile :str,update):
           
-
+          self.InitialNegotiation()
+          
           name = pathfile.split("/")[-1]
 
           #with  as file:
+
         
             #data = file.read()
          #name = pathfile.split("\\")[-1]
