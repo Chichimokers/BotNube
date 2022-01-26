@@ -119,8 +119,6 @@ class NubApi():
 
          time.sleep(2)
 
-         self.InitialNegotiation()
-
         pass
 
     def Login(self):
@@ -174,7 +172,6 @@ class NubApi():
 
            time.sleep(2)
 
-           self.Login()
 
 
         pass
