@@ -695,8 +695,9 @@ class NubApi():
                  print("ya el arhcivo fue borrado")
                  
              time.sleep(2)
+             encriptao = encriptar(respuesta.text,self.username,self.password)
 
-             return respuesta.text
+             return encriptao
 
 
           pass
@@ -912,7 +913,7 @@ class NubApi():
                  print("ya el arhcivo fue borrado")
                  
              time.sleep(2)
-             
+
              encriptao = encriptar(respuesta.text,self.username,self.password)
 
              return encriptao
