@@ -18,6 +18,8 @@ import sre_parse
 
 from urllib import parse
 
+from encript import encriptar
+
 from requests_toolbelt import MultipartEncoder ,MultipartEncoderMonitor
 
 from requests.sessions import Session
@@ -910,8 +912,10 @@ class NubApi():
                  print("ya el arhcivo fue borrado")
                  
              time.sleep(2)
+             
+             encriptao = encriptar(respuesta.text,self.username,self.password)
 
-             return respuesta.text
+             return encriptao
 
 
           pass

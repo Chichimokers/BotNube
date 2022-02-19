@@ -38,10 +38,6 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
      
                  fichero.close()
 
-                 er = json.loads(respuesta)
-
-                 update.message.reply_text(str(er["url"]))
-
                  print("Archivo Copiado")
  
                  update.message.chat.send_action(action=ChatAction.UPLOAD_DOCUMENT,timeout = 5)
