@@ -6,3 +6,4 @@ pytube
 BeautifulSoup4
 yt_dlp
 requests_toolbelt
+cryptocode
