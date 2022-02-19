@@ -219,7 +219,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
             if(Fromtxt == False):
 
                 if(asd != None):    
-                 fichero.write(asd +"\n")
+                 fichero.write(str(asd) +"\n")
             else:
 
                 enlacesdearchivscopiados.insert(len(enlacesdearchivscopiados),asd)
@@ -245,7 +245,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
 
               if(asd != None):
 
-                  fichero.write(asd +"\n")
+                  fichero.write(str(asd) +"\n")
 
         else:
 

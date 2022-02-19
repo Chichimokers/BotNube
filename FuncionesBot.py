@@ -97,7 +97,7 @@ def ProcesartxtdeYoutube(update,context):
 
         else:
 
-          archivoaenviar.write(fichero+"\n")
+          archivoaenviar.write(str(fichero)+"\n")
 
         pass
 
@@ -129,7 +129,7 @@ def ProcesartxtdeYoutube(update,context):
 
               else:
 
-               archivoaenviar.write(fichero+"\n")
+               archivoaenviar.write(str(fichero)+"\n")
 
           else:
 
@@ -141,7 +141,7 @@ def ProcesartxtdeYoutube(update,context):
 
               else:
 
-                 archivoaenviar.write(final+"\n")
+                 archivoaenviar.write(str(final)+"\n")
              
          
       archivoaenviar.close()
@@ -214,7 +214,7 @@ def DescargarVideodeYoutube(update,context):
 
             print(respuesta)
 
-            fichero.write(respuesta+"\n")
+            fichero.write(str(respuesta)+"\n")
             
           pass
 
@@ -235,7 +235,7 @@ def DescargarVideodeYoutube(update,context):
           
               print(respuesta)
 
-              fichero.write(respuesta+"\n")
+              fichero.write(str(respuesta)+"\n")
   
         """ def PackageError():
 
@@ -356,7 +356,7 @@ def DowlandFromTxt(update,context):
 
         else:
 
-          archivoaenviar.write(fichero+"\n")
+          archivoaenviar.write(str(fichero)+"\n")
 
         pass
 
@@ -426,7 +426,7 @@ def DowlandFromTxt(update,context):
 
           if(enlacess != "error"):
    
-             archivoaenviar.write(enlacess + "\n")
+             archivoaenviar.write(str(enlacess) + "\n")
  
           else:
 
@@ -454,7 +454,7 @@ def DowlandFromTxt(update,context):
              for en in grandesenalces:
                print(en)
                if(en != None):
-                 archivoaenviar.write(en+"\n")
+                 archivoaenviar.write(str(en)+"\n")
 
   
            else:
@@ -481,7 +481,7 @@ def DowlandFromTxt(update,context):
   
               if(enlacess != "error"):
 
-                 archivoaenviar.write(enlacess +"\n")
+                 archivoaenviar.write(str(enlacess) +"\n")
 
               else:
         
@@ -556,7 +556,7 @@ def DisallowUser(update,context):
 
    for s in userlis :
 
-       admincontrollers.write(s+"\n")
+       admincontrollers.write(str(s)+"\n")
 
    admincontrollers = open("/app/whitelist.txt","r")
 

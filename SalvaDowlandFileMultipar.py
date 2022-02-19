@@ -146,7 +146,7 @@ def MultipartTask(url: str,update,tarea:StoppableThread,cookies):
         
         if(asd != "error"):
 
-            fichero.write(asd +"\n")
+            fichero.write(str(asd) +"\n")
 
     update.message.reply_text("Revisando paquetes que dieron errores")
 
@@ -164,7 +164,7 @@ def MultipartTask(url: str,update,tarea:StoppableThread,cookies):
 
         errorlist.remove(er)
 
-        fichero.write(returnado+"\n")
+        fichero.write(str(returnado)+"\n")
 
      if(len(errorlist) != 0):
 
