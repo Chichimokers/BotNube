@@ -23,7 +23,7 @@ def encriptar(mensjaeaencriptar,username,password):
     #final = cryptocode.encrypt(str(jsonstring),"SystemCrahsed404*")
     final = str(jsonstring)
 
-    final = final.encode('ascii')
+    final = final.encode('utf-8')
 
     final = base64.b64encode(final)
 
