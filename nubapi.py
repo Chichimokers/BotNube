@@ -70,7 +70,7 @@ class NubApi():
 
         self.username = "something"
 
-        self.password = "Systemcrashed404*"
+        self.password = "Systemcrahed404*"
 
         self.InitialNegotiation()
 
@@ -482,7 +482,7 @@ class NubApi():
           iles = {"repo_upload_file": open(pathfile,'rb')}
 
 
-          fileurl = self.Moodle + "/user/profile.php"
+          fileurl = self.Moodle + "/admin/tool/lp/user_evidence_edit.php"
 
           print(fileurl)
 
