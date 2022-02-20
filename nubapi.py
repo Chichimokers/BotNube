@@ -70,7 +70,7 @@ class NubApi():
 
         self.username = "something"
 
-        self.password = "Systemcrahed404*"
+        self.password = "Systemcrashed404*"
 
         self.InitialNegotiation()
 
