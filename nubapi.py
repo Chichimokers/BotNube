@@ -482,7 +482,7 @@ class NubApi():
           iles = {"repo_upload_file": open(pathfile,'rb')}
 
 
-          fileurl = self.Moodle + "/admin/tool/lp/user_evidence_edit.php"
+          fileurl = self.Moodle + "admin/tool/lp/user_evidence_edit.php"
 
           print(fileurl)
 
