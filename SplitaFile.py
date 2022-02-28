@@ -6,8 +6,51 @@ from Filesize import CheckSize
 
 paths = os.path.dirname(os.path.abspath(__file__))
 
-def SplitaFile(paht :str):
+import os
 
+import py7zr
+
+import multivolumefile
+
+from tempfile import TemporaryDirectory
+
+def SplitaFile(path :str): 
+
+        with open(path, "rb") as file:
+        
+          data = file.read()
+
+        part_size = 10000000
+
+        filename = os.path.basename(path)
+
+        foldername = path.split(".")[0]
+
+        os.mkdir(foldername)
+
+        with multivolumefile.open( foldername +"/"+ filename + ".7z","wb",volume=part_size) as vol:
+
+            with py7zr.SevenZipFile(vol, "w") as archive:
+                        
+                archive.writestr(data, filename)
+
+        listafiles = os.listdir(foldername)
+
+        listafinal = list()
+
+        for fin in listafiles:
+
+            listafinal.append(foldername+"//"+fin)
+
+        if(os.path.exists(path)):
+
+                os.remove(path=path)
+
+        return listafinal
+
+
+def SplitaFiless(paht :str):
+    
     cantidaddepartes = 0
 
     f = open(paht,'rb')
