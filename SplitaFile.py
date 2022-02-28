@@ -43,6 +43,7 @@ def SplitaFile(path :str):
             listafinal.append(foldername+"//"+fin)
 
         if(os.path.exists(path)):
+            
 
                 os.remove(path=path)
 
