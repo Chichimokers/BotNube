@@ -14,7 +14,7 @@ import multivolumefile
 
 from tempfile import TemporaryDirectory
 
-def SplitaFile(path :str): 
+def SplitaFiless(path :str): 
 
         with open(path, "rb") as file:
         
@@ -43,14 +43,14 @@ def SplitaFile(path :str):
             listafinal.append(foldername+"//"+fin)
 
         if(os.path.exists(path)):
-            
+
 
                 os.remove(path=path)
 
         return listafinal
 
 
-def SplitaFiless(paht :str):
+def SplitaFile(paht :str):
     
     cantidaddepartes = 0
 
