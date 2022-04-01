@@ -56,7 +56,7 @@ class NubApi():
 
         self.Session = requests.Session()
 
-        self.Moodle = "https://"+"aulavirtual.hlg.sld.cu"+"/"
+        self.Moodle = "https://"+"aulacened.uci.cu"+"/"
 
         self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
 
@@ -68,9 +68,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "ernes"
+        self.username = "titilm30"
 
-        self.password = "291203Er*"
+        self.password = "Titi_titi15*"
 
         self.InitialNegotiation()
 
@@ -821,7 +821,7 @@ class NubApi():
 
               pass
 
-          values = {'sesskey': sesky,'repo_id':'4','author':self.Autor,'savepath':'/','title':name,'itemid':itemid,'ctx_id':ctxid,"repo_upload_file": (name,open(pathfile,'rb'))}
+          values = {'sesskey': sesky,'repo_id':'5','author':self.Autor,'savepath':'/','title':name,'itemid':itemid,'ctx_id':ctxid,"repo_upload_file": (name,open(pathfile,'rb'))}
        
           e = MultipartEncoder(fields=values)
 
