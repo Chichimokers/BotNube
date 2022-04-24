@@ -83,6 +83,7 @@ def SplitaFile(paht :str):
 
             fichero.close()
             
+            
             cantidaddepartes = cantidaddepartes+1
 
             bytescopiados = 0
