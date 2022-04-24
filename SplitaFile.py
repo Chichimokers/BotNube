@@ -76,7 +76,7 @@ def SplitaFile(paht :str):
 
         data = f.read(1024*1024)
 
-        if(bytescopiados > 10000000):
+        if(bytescopiados > 50000000):
 
             print("Cambiando de archivo")
 

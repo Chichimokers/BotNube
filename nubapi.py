@@ -788,8 +788,19 @@ class NubApi():
 
           def upload_callback(monitor):
               
-     
-        
+            s = "Se ha subido " + CheckSize(int(monitor.bytes_read)) + " de "+ tamanofinal
+          
+            now = datetime.now()
+
+            if(int(monitor.bytes_read) != 0 ):
+             
+              porcent = int(monitor.bytes_read/size*100)
+
+              cambio = str("Uploading "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
+
+              grupocambio = str("Uploading "+name+" "+str(CheckSize(monitor.bytes_read))+" de "+str(CheckSize(size))+" "+str(porcent)+"%") 
+ 
+              print(s)
 
               pass
 
