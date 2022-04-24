@@ -80,6 +80,7 @@ def SplitaFile(paht :str):
 
             print("Cambiando de archivo")
 
+
             fichero.close()
             
             cantidaddepartes = cantidaddepartes+1
