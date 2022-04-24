@@ -10,7 +10,6 @@ from bs4.element import ProcessingInstruction
 import requests
 
 from telegram import ParseMode
-import parser 
 
 import time
 
