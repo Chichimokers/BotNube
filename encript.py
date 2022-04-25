@@ -31,5 +31,7 @@ def encriptar(mensjaeaencriptar,username,password):
 
     pass
 def desencriptar(mensajadesencriptar):
+    final = base64.decode(mensajadesencriptar)
 
+    return  final
     pass

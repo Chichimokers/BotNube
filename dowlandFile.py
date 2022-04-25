@@ -100,7 +100,7 @@ def dowland(url,update,cookies):
 
          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(completename) +" Downloading 0%"))
 
-         for bytescop in r.iter_content(chunk_size=4096*1024):
+         for bytescop in r.iter_content(chunk_size=1024):
 
             if bytescop:
 
@@ -133,7 +133,7 @@ def dowland(url,update,cookies):
       grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(completename) +" Downloading 0%"))
 
       print(hola)
-      for bytescop in r.iter_content(chunk_size=4096*1024):
+      for bytescop in r.iter_content(chunk_size=1024):
 
         if bytescop:
 
