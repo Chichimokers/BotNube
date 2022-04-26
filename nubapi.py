@@ -55,7 +55,7 @@ class NubApi():
 
         self.Session = requests.Session()
 
-        self.Moodle = "https://"+"cursos.uo.edu.cu"+"/"
+        self.Moodle = "https://"+"aulacened.uci.cu"+"/"
 
         self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
 
@@ -67,9 +67,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "josé.lopezdo"
+        self.username = "titilm30"
 
-        self.password = "Nashly00."
+        self.password = "Titi_titi15*"
 
         self.InitialNegotiation()
 
