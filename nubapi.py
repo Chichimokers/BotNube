@@ -728,7 +728,7 @@ class NubApi():
   
           try:
 
-            contenido  = self.Session.get(self.Moodle+"user/files.php")
+            contenido  = self.Session.get(self.Moodle+"user/edit.php")
  
             er = bs4.BeautifulSoup(contenido.text,'html.parser')
 
