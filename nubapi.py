@@ -67,9 +67,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "francisco.duran"
+        self.username = "josé.lopezdo"
 
-        self.password = "Quintero.2021"
+        self.password = "Nashly00."
 
         self.InitialNegotiation()
 
