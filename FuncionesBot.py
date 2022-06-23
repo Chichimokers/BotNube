@@ -41,6 +41,8 @@ taskslist = list()
 
 paths = os.path.dirname(os.path.abspath(__file__))
 
+finalsize =400 * 1000000
+
 def ProcesartxtdeYoutube(update,context):
      context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado YoutubeTxt") 
      
@@ -109,7 +111,7 @@ def ProcesartxtdeYoutube(update,context):
 
           name = er.split('/')[-1]
 
-          if(size > 100000000):
+          if(size > finalsize):
 
             update.message.reply_text("El video es largo se dividira en varias partes")
             
@@ -190,7 +192,7 @@ def DescargarVideodeYoutube(update,context):
 
       name = finalpaht.split('/')[-1]
 
-      if(tama > 100000000):
+      if(tama > finalsize):
           
         update.message.reply_text("El video es largo se dividira en varias partes")
 
@@ -444,7 +446,7 @@ def DowlandFromTxt(update,context):
 
              print("Error")
 
-           if(tamano > 100000000):
+           if(tamano > finalsize):
 
              update.message.reply_text("El archivo que va a copiar es grande va a demorar mas de lo normal")
  
@@ -666,7 +668,7 @@ def ProcesarDescargadeunFichero(update,context):
            
            tamano = 1
         
-         if(tamano > 100000000):
+         if(tamano > finalsize):
 
            update.message.reply_text("El archivo que va a copiar es grande va a demorar mas de lo normal")
            update.message.reply_text("Tiene una size de :" +str(CheckSize(tamano)))
@@ -694,7 +696,7 @@ def ProcesarDescargadeunFichero(update,context):
            print("Error")
 
 
-         if(tamano > 100000000):
+         if(tamano > finalsize):
 
            update.message.reply_text("El archivo que va a copiar es grande va a demorar mas de lo normal")
            
