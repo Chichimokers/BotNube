@@ -55,7 +55,7 @@ class NubApi():
 
         self.Session = requests.Session()
 
-        self.Moodle = "https://"+"aulacened.uci.cu"+"/"
+        self.Moodle = "https://"+"moodle.uclv.edu.cu"+"/"
 
         self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
 
@@ -67,9 +67,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "titilm30"
+        self.username = "bvrodriguez"
 
-        self.password = "Titi_titi15*"
+        self.password = "marili*1853"
 
         self.InitialNegotiation()
 
@@ -728,7 +728,7 @@ class NubApi():
   
           try:
 
-            contenido  = self.Session.get(self.Moodle+"user/files.php")
+            contenido  = self.Session.get(self.Moodle+"user/edit.php")
  
             er = bs4.BeautifulSoup(contenido.text,'html.parser')
 
