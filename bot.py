@@ -305,9 +305,9 @@ def main():
 
         print("Listening.....")  
         
-        token = " "
+        token = "1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"
 
-        Cracsito ="1931960214:AAGiwz7oO7qpmAlPPGHPnlO98DU03tqkGPY"     
+        Cracsito ="1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"     
 
         SecondDowlander ="2046704801:AAH3SZDqOcR1BSLdUyEZLgZkUD5cTmMshI0"
 
@@ -324,7 +324,7 @@ def main():
             token = Hitler
             
 
-        if(name == "asd-s3"):
+        if(name == "cracbotnub"):
             
            token=  Cracsito
 
