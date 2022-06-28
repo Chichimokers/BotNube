@@ -56,7 +56,7 @@ def SplitaFile(paht :str):
 
     f = open(paht,'rb')
 
-    data = f.read(1024*1024)
+    data = f.read(1024*5)
 
     bytescopiados = 0 
 
@@ -74,9 +74,9 @@ def SplitaFile(paht :str):
 
         print("Se han copiado " + CheckSize(bytescopiados))
 
-        data = f.read(1024*1024)
+        data = f.read(1024*5)
 
-        if(bytescopiados > 3000000):
+        if(bytescopiados > 390000000):
 
             print("Cambiando de archivo")
 
