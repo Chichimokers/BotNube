@@ -41,7 +41,7 @@ taskslist = list()
 
 paths = os.path.dirname(os.path.abspath(__file__))
 
-finalsize =400 * 1000000
+finalsize =5 * 1000000
 
 def ProcesartxtdeYoutube(update,context):
      context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado YoutubeTxt") 
