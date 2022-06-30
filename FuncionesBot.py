@@ -75,7 +75,7 @@ def NUBUPLOAD(update,context):
 
     file.close()
   
-    update.message.chat.send_document(document = open("app/"+name+".txt","r"))
+    update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
 
   PrincipalThread = StoppableThread(target=start)
 
