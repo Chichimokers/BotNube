@@ -69,9 +69,8 @@ def NUBUPLOAD(update,context):
    
 
     name = namefile
-    jsona = json.loads(asd)
 
-
+    jsona = json.loads(str(asd))
 
     file = open("/app/"+name+".txt","w")
 
