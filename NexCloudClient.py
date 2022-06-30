@@ -68,12 +68,12 @@ class NexCloudClient(object):
                                  self.func(self.filename,monitor.bytes_read,monitor.len,self.speed,self.args)
                             self.time_total = 0
                             self.speed = 0
-        #encoder = rt.MultipartEncoder(upload_file)
-        #progrescall = CloudUpload(progressfunc,file,args)
-        #callback = partial(progrescall)
-        #monitor = MultipartEncoderMonitor(encoder,callback=callback)
-        #resp = self.session.put(uploadUrl,data=monitor,headers={'requesttoken':requesttoken})
-        resp = self.session.put(uploadUrl,data=f,headers={'requesttoken':requesttoken},proxies=self.proxy)
+        encoder = rt.MultipartEncoder(upload_file)
+        progrescall = CloudUpload(progressfunc,file,args)
+        callback = partial(progrescall)
+        monitor = MultipartEncoderMonitor(encoder,callback=callback)
+        resp = self.session.put(uploadUrl,data=monitor,headers={'requesttoken':requesttoken})
+        #resp = self.session.put(uploadUrl,data=f,headers={'requesttoken':requesttoken},proxies=self.proxy)
         f.close()
         retData = {'upload':False,'name':filepath}
         if resp.status_code == 201:

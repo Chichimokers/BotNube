@@ -57,8 +57,8 @@ def NUBUPLOAD(update,context):
     afg.edit_text("subiendo")
 
 
-    def progresfinc(a):
-      print(a)
+    def progresfinc(filename,bytes_read,len,speed):
+      print(filename +" "+bytes+" "+bytes_read+" "+len+" "+speed )
       pass
 
     asd = a.upload_file(file="/app/"+namefile,path="/app/"+namefile,progressfunc=progresfinc)
