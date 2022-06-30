@@ -70,12 +70,12 @@ def NUBUPLOAD(update,context):
 
     name = namefile
 
-    jsona = json.loads(str(asd))
-
     file = open("/app/"+name+".txt","w")
+    for a in asd:
+      if(a =="url"):
+        file.write(str(asd[a]))
 
-    file.write(str(jsona["url"]))
-
+ 
     file.close()
   
     update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
