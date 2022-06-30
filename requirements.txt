@@ -9,7 +9,6 @@ requests_toolbelt
 cryptocode
 requests[socks]
 user_agent
-S5Crypto
 requests
 requests[socks]
 bs4
