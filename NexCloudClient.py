@@ -6,7 +6,6 @@ from requests_toolbelt import MultipartEncoder
 from functools import partial
 import time
 from bs4 import BeautifulSoup
-from ProxyCloud import ProxyCloud
 
 import socket
 import socks
