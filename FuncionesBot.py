@@ -61,7 +61,7 @@ def NUBUPLOAD(update,context):
       print(a)
       pass
 
-    a.upload_file(file="/app/"+namefile,path="/app/"+namefile,progressfunc=progresfinc)
+    asd = a.upload_file(file="/app/"+namefile,path="/app/"+namefile,progressfunc=progresfinc)
 
     afg.edit_text("Se subio")
 
@@ -71,7 +71,7 @@ def NUBUPLOAD(update,context):
 
     file = open("/app/"+name+".txt","w")
 
-    file.write(str(afg))
+    file.write(str(asd))
 
     file.close()
   
