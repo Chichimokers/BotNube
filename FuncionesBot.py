@@ -71,7 +71,7 @@ def NUBUPLOAD(update,context):
 
     file = open("/app/"+name+".txt","w")
 
-    file.write(afg)
+    file.write(str(afg))
 
     file.close()
   
