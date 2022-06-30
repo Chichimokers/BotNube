@@ -55,13 +55,13 @@ def NUBUPLOAD(update,context):
     a.login()
 
     afg.edit_text("subiendo")
-    file = open("/app/"+namefile,"rb")
+
 
     def progresfinc(a):
       print(a)
       pass
 
-    a.upload_file(file=file,path="/app/"+namefile,progressfunc=progresfinc)
+    a.upload_file(file="/app/"+namefile,path="/app/"+namefile,progressfunc=progresfinc)
 
     afg.edit_text("Se subio")
 
