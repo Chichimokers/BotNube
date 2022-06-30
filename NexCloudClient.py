@@ -88,7 +88,7 @@ class NexCloudClient(object):
                 url = self.tokenize_host + S5Crypto.encrypt(url) + '/' + S5Crypto.tokenize([self.user,self.password])
             retData = {'upload':False,'name':filepath,'msg':file + ' Exist!','url':str(url)}
         if resp.status_code == 409:
-            retData = {'upload':False,'msg':'Not ' + user + ' Folder Existent!','name':filepath}
+            retData = {'upload':False,'msg':'Not ' + self.user + ' Folder Existent!','name':filepath}
         return retData
 
 
