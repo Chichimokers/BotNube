@@ -1,11 +1,13 @@
 
 
+from asyncore import file_wrapper
 from genericpath import isfile
 import json
 
 from logging import error
 
 import os
+from unicodedata import name
 
 from telegram.ext.conversationhandler import ConversationHandler
 from telegram.update import Update
@@ -29,7 +31,7 @@ import bs4
 from cleanname import CleanName
 
 from dowlandFileMultipart import MultipartTask
-
+from NexCloudClient import NexCloudClient
 from dowlandFile import dowland
 
 from nubapi import NubApi
@@ -43,6 +45,30 @@ paths = os.path.dirname(os.path.abspath(__file__))
 
 finalsize =400 * 1000000
 
+def NUBUPLOAD(update,context):
+
+  namefile = dowland(update.message.text,update,None)
+
+  a = NexCloudClient("ernesto.perez","*Y@g@miL96","https://nube.uo.edu.cu/")
+
+  a.upload_file(path="app/"+namefile)
+
+  afg = update.message.reply_text("Subiendo")
+
+  name = namefile
+
+  file = open("app/"+name+".txt")
+
+  file.write(afg)
+
+  file.close()
+  
+  update.message.chat.send_document(document = open("app/"+name+".txt","r"))
+
+  return ConversationHandler.END
+
+
+  pass
 def ProcesartxtdeYoutube(update,context):
      context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado YoutubeTxt") 
      

@@ -1,4 +1,5 @@
 ﻿
+from cgitb import text
 from datetime import time
 import urllib
 
@@ -43,6 +44,7 @@ from tokenmanage import searchToken
 import requests
 
 import time
+from FuncionesBot import NUBUPLOAD
 
 import re 
 
@@ -61,7 +63,7 @@ Entrada_de_la_Descaraga = 0
 ChangeToken = 1
 
 BanUSEr=988
-
+nubdowland = 5000
 Dowlandtxt = 100
 
 Dowland_Trance = 5
@@ -207,6 +209,7 @@ def banUser(update,context):
 
     pass
 
+
 def BanearUsuario(update,context):
 
     DisallowUser(update=update,context=context)
@@ -282,7 +285,6 @@ def Cancelartareas(update,context):
 
      update.message.reply_text("No estas autorizado para usar este bot")
     pass
-
 def DowlandYoutubeVideo(update,context):
 #Youtube dowland entry point
     
@@ -299,7 +301,29 @@ def DowlandYoutubeVideo(update,context):
      update.message.reply_text("No estas autorizado para usar este bot")
 
     pass
+def nubdowlanda(update,context):
 
+    NUBUPLOAD(update=update,context=context)
+   
+    return ConversationHandler.END
+    
+    pass
+
+def nubdowlandsin(update,context):
+
+    print("/nubdowland fue utilizado por  @"+str(update.message.chat.username))
+    
+    if(EstasPermitiado(update=update)):
+
+     update.message.reply_text("Envie el enlace")
+
+     return nubdowland
+
+    else:
+
+     update.message.reply_text("No estas autorizado para usar este bot")
+
+    pass
 def main():
         
 
@@ -361,7 +385,8 @@ def main():
             CommandHandler('Dowlandtxt',downloadTxt),
             CommandHandler('cancel',Cancelartareas),
             CommandHandler('Test',Test),
-            CommandHandler('ban',banUser)
+            CommandHandler('ban',banUser),
+            CommandHandler('nubdowland',nubdowlandsin)
         ],
         states=
         {
@@ -372,7 +397,8 @@ def main():
             allowuser:[MessageHandler(Filters.text,AddUser)],
             Dowlandtxt:[MessageHandler(Filters.document,DowlandFromTxt)],
             CancelTrace:[MessageHandler(Filters.text,CancelarTarea)],
-            BanUSEr:[MessageHandler(Filters.text,BanearUsuario)]
+            BanUSEr:[MessageHandler(Filters.text,BanearUsuario)],
+            nubdowland:[MessageHandler(Filters.text,nubdowlanda)]
         },
         
         fallbacks=[]
