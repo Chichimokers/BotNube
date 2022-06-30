@@ -57,21 +57,25 @@ def NUBUPLOAD(update,context):
     afg.edit_text("subiendo")
 
 
-    def progresfinc(filename,bytes_read,len,speed):
+    def progresfinc(filename,bytes_read,len,speed,a):
+
       print(filename +" "+bytes+" "+bytes_read+" "+len+" "+speed )
+
       pass
 
-    asd = a.upload_file(file="/app/"+namefile,path="/app/"+namefile,progressfunc=progresfinc)
+    asd = a.upload_file(file="/app/"+namefile,path="/"+namefile,progressfunc=progresfinc)
 
     afg.edit_text("Se subio")
-
    
 
     name = namefile
+    jsona = json.loads(asd)
+
+
 
     file = open("/app/"+name+".txt","w")
 
-    file.write(str(asd))
+    file.write(str(jsona["url"]))
 
     file.close()
   
