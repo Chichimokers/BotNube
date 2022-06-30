@@ -46,24 +46,28 @@ paths = os.path.dirname(os.path.abspath(__file__))
 finalsize =400 * 1000000
 
 def NUBUPLOAD(update,context):
+  def start():
+    namefile = dowland(update.message.text,update,None)
 
-  namefile = dowland(update.message.text,update,None)
+    a = NexCloudClient("ernesto.perez","*Y@g@miL96","https://nube.uo.edu.cu/")
 
-  a = NexCloudClient("ernesto.perez","*Y@g@miL96","https://nube.uo.edu.cu/")
+    a.upload_file(path="app/"+namefile)
 
-  a.upload_file(path="app/"+namefile)
+    afg = update.message.reply_text("Subiendo")
 
-  afg = update.message.reply_text("Subiendo")
+    name = namefile
 
-  name = namefile
+    file = open("app/"+name+".txt")
 
-  file = open("app/"+name+".txt")
+    file.write(afg)
 
-  file.write(afg)
-
-  file.close()
+    file.close()
   
-  update.message.chat.send_document(document = open("app/"+name+".txt","r"))
+    update.message.chat.send_document(document = open("app/"+name+".txt","r"))
+
+  PrincipalThread = StoppableThread(target=start)
+
+  PrincipalThread.start()
 
   return ConversationHandler.END
 
