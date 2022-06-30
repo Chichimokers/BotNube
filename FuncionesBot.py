@@ -51,9 +51,15 @@ def NUBUPLOAD(update,context):
 
     a = NexCloudClient("ernesto.perez","*Y@g@miL96","https://nube.uo.edu.cu/")
 
-    a.upload_file(path="app/"+namefile)
+    a.login()
 
     afg = update.message.reply_text("Subiendo")
+
+    a.upload_file(path="app/"+namefile)
+
+    afg.edit_text("Se subio")
+
+   
 
     name = namefile
 
