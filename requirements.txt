@@ -9,3 +9,4 @@ requests_toolbelt
 cryptocode
 requests[socks]
 user_agent
+ProxyCloud
