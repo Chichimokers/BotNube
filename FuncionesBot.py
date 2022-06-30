@@ -48,20 +48,20 @@ finalsize =400 * 1000000
 def NUBUPLOAD(update,context):
   def start():
     namefile = dowland(update.message.text,update,None)
+    afg = update.message.reply_text("Logueandose")
 
     a = NexCloudClient("ernesto.perez","*Y@g@miL96","https://nube.uo.edu.cu/")
 
     a.login()
 
-    afg = update.message.reply_text("Subiendo")
-
-    file = open("app/"+namefile,"rb")
+    afg.edit_text("subiendo")
+    file = open("/app/"+namefile,"rb")
 
     def progresfinc(a):
       print(a)
       pass
 
-    a.upload_file(file=file,path="app/"+namefile,progressfunc=progresfinc)
+    a.upload_file(file=file,path="/app/"+namefile,progressfunc=progresfinc)
 
     afg.edit_text("Se subio")
 
