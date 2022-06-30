@@ -59,7 +59,7 @@ def NUBUPLOAD(update,context):
 
     def progresfinc(filename,bytes_read,len,speed,a):
 
-      print(filename +" "+str(bytes)+" "+str(bytes_read)+" "+str(len)+" "+str(speed) )
+      print(filename +" "+str(bytes)+" "+str(CheckSize(bytes_read))+" "+str(CheckSize(len))+" "+str(CheckSize(speed)) )
 
       pass
 
