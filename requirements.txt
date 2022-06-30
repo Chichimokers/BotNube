@@ -10,3 +10,11 @@ cryptocode
 requests[socks]
 user_agent
 S5Crypto
+requests
+requests[socks]
+bs4
+user_agent
+youtube_dl
+requests_toolbelt
+telethon
+tenacity
