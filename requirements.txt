@@ -7,3 +7,5 @@ BeautifulSoup4
 yt_dlp
 requests_toolbelt
 cryptocode
+requests[socks]
+user_agent
