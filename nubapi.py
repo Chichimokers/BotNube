@@ -67,9 +67,9 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "bvrodriguez"
+        self.username = "lglantigua"
 
-        self.password = "marili*1853"
+        self.password = "Bwmnr2Cd*"
 
         self.InitialNegotiation()
 
@@ -335,7 +335,7 @@ class NubApi():
         print("El size del archivo es "+ str(tamanofinal))
 
 
-        fileurl = self.Moodle + 'admin/tool/lp/user_evidence_edit.php?userid=' + self.userid
+        fileurl = self.Moodle + 'user/profile.php' + self.userid
 
         respa = self.Session.get(fileurl)
 
