@@ -43,7 +43,7 @@ taskslist = list()
 
 paths = os.path.dirname(os.path.abspath(__file__))
 
-finalsize =400 * 1000000
+finalsize =5 * 1000000
 
 def NUBUPLOAD(update,context):
   def start():
