@@ -341,8 +341,11 @@ def main():
 
         Hitler="5200948536:AAH3cUol9bbQrk28zCgLGHFzV8Xjw-VQVdM"
 
+        groupcorre = "1813335220:AAExLYccktn63NMEgQ2jigmJs8wVKrLvfx4"
+
         name = os.environ['HEROKU_APP_NAME']
-        
+        if(name == "group"):
+            token = groupcorre
         if(name == "hitler"):
 
             token = Hitler
