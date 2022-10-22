@@ -65,6 +65,9 @@ def Ped(update,context):
    file = open("/app/"+name+".txt","w")
   
    file.write(asd)
+   file.close()
+
+   
 
    update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
 
