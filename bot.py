@@ -346,7 +346,7 @@ def main():
 
         print("Listening.....")  
         
-        token = "1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"chi
+        token = "1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"
 
         Cracsito ="1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"     
 
