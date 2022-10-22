@@ -60,6 +60,8 @@ def Ped(update,context):
 
    name = namefile
 
+   update.message.reply_text(asd)
+
    file = open("/app/"+name+".txt","w")
   
    file.write(asd)

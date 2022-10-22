@@ -162,6 +162,6 @@ class Freeapi():
            finalizar = self.Session.post(url="http://revpediatria.sld.cu/index.php/ped/author/saveSubmit/"+finalnumber[len(finalnumber)-1],data=datosfinal)
 
            print(finalizar.url)
-
+           
            return sacadolink.attrs.get("href")
     pass
