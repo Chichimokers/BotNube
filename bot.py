@@ -325,7 +325,7 @@ def nubdowlandsin(update,context):
 
     pass
 dowlandpentry = 9000
-def dowlandp(Update,context):
+def dowlandp(update,context):
     print("/dowlandp  fue utilizado por @"+str(update.message.chat.username))
 
     if(EstasPermitiado(update=update)):
