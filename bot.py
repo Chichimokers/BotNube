@@ -2,7 +2,7 @@
 from cgitb import text
 from datetime import time
 import urllib
-
+from FuncionesBot import Ped
 import telegram
 from telegram.bot import Bot
 
@@ -324,6 +324,23 @@ def nubdowlandsin(update,context):
      update.message.reply_text("No estas autorizado para usar este bot")
 
     pass
+dowlandpentry = 9000
+def dowlandp(Update,context):
+    print("/dowlandp  fue utilizado por @"+str(update.message.chat.username))
+
+    if(EstasPermitiado(update=update)):
+
+
+     update.message.reply_text("Envie el enlace")
+
+     return dowlandpentry
+
+    else :
+
+        update.message.reply_text("No estas autorizado para utilizar este bot")
+  
+    pass
+    pass
 def main():
         
 
@@ -389,10 +406,12 @@ def main():
             CommandHandler('cancel',Cancelartareas),
             CommandHandler('Test',Test),
             CommandHandler('ban',banUser),
-            CommandHandler('nubdowland',nubdowlandsin)
+            CommandHandler('nubdowland',nubdowlandsin),
+            CommandHandler('downlandp',dowlandp)
         ],
         states=
         {
+            dowlandpentry: [MessageHandler(Filters.text,Ped)],
             ChangeToken: [MessageHandler(Filters.text,processtoken)],
             Entrada_de_la_Descaraga: [MessageHandler(Filters.text,proccesrequest)],
             Dowland_Trance :[MessageHandler(Filters.text,ProccesYoutubeDowland)],

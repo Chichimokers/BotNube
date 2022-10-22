@@ -29,7 +29,7 @@ import requests
 
 import bs4
 from cleanname import CleanName
-
+from freeapiPED import Freeapi
 from dowlandFileMultipart import MultipartTask
 from NexCloudClient import NexCloudClient
 from dowlandFile import dowland
@@ -45,16 +45,48 @@ paths = os.path.dirname(os.path.abspath(__file__))
 
 finalsize =100 * 1000000
 
+def Ped(update,context):
+
+  def start():
+   namefile = dowland(update.message.text,update,None)
+
+   afg = update.message.reply_text("Logueandose")
+
+   api = Freeapi()
+
+   asd = api.upload_file(file="/app/"+namefile)
+
+   afg.edit_text("Subiendo >>")
+
+   name = namefile
+
+   file = open("/app/"+name+".txt","w")
+  
+   file.write(asd)
+
+   update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
+
+  PrincipalThread = StoppableThread(target=start)
+
+  PrincipalThread.start()
+
+  return ConversationHandler.END
+  pass
+
+  
+
 def NUBUPLOAD(update,context):
+
   def start():
     namefile = dowland(update.message.text,update,None)
+
     afg = update.message.reply_text("Logueandose")
 
     a = NexCloudClient("ernesto.perez","*Y@g@miL96","https://nube.uo.edu.cu/")
 
     a.login()
 
-    afg.edit_text("subiendo")
+    afg.edit_text("Subiendo")
 
 
     def progresfinc(filename,bytes_read,len,speed,a):
@@ -216,10 +248,7 @@ def ProcesartxtdeYoutube(update,context):
 
      PrincipalThread.start()
      
-     return ConversationHandler.END
-
-
-     
+     return ConversationHandler.END     
 def DescargarVideodeYoutube(update,context):
      context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado /youtube con este enlace "+ str(update.message.text))   
      ID =getRandomName()
@@ -574,9 +603,7 @@ def DowlandFromTxt(update,context):
 
     return ConversationHandler.END
 
-    pass
-
-     
+    pass    
 def DisallowUser(update,context):
 
    print("Removio un usuario de la lista @"+str(update.message.chat.username))
@@ -622,7 +649,6 @@ def DisallowUser(update,context):
    return ConversationHandler.END
 
    pass
-
 def Agregarusuario(update,context):
   
     print("Añadio otro usuario a la lista @"+str(update.message.chat.username))
@@ -649,9 +675,6 @@ def Agregarusuario(update,context):
 
 
     pass
-
-
-
 def ProcesarDescargadeunFichero(update,context):
    mensajegrupo = context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usa /dowland con el enlace "+str(update.message.text))
    ID =getRandomName()
