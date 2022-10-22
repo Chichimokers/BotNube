@@ -54,7 +54,7 @@ def Ped(update,context):
 
    api = Freeapi()
 
-   asd = api.upload_file(file="/app/"+namefile)
+   asd = api.upload_file(filepath="/app/"+namefile)
 
    afg.edit_text("Subiendo >>")
 
