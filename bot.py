@@ -35,7 +35,6 @@ from telegram import ChatAction, chat, message
 from telegram.update import Update
 from dowlandFile import Contexton
 from dowlandFileMultipart import Contextito
-from todus3.client import ToDusClient
 
 import shutil
 

@@ -2,9 +2,6 @@ import os
 
 import os.path
 
-from todus3 import client
-
-from todus3.main import register
 
 from os import remove
 
