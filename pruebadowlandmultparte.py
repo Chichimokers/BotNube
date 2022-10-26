@@ -5,7 +5,7 @@ from todus3.client import ToDusClient
 
 from UploadtoS3 import UploadFile
 
-from ast import parse
+from ast import pars
 
 import requests
 

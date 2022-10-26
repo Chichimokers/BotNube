@@ -3,10 +3,6 @@ import json
 
 from telegram.update import Update
 
-from todus3.client import ToDusClient
-
-from todus3.main import split_upload
-
 import os 
 
 from nubapi import NubApi
