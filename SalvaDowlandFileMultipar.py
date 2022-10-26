@@ -9,10 +9,6 @@ from bs4.builder import TreeBuilderRegistry
 
 from TareaFinalizable import StoppableThread
 
-from todus3 import client
-
-from todus3.client import ToDusClient
-
 from UploadtoS3 import UploadFile
 
 from ast import parse
