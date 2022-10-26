@@ -20,7 +20,7 @@ from telegram.files.document import Document
 
 import os
 
-import todus3
+
 
 from urllib import parse
 
