@@ -53,10 +53,18 @@ def Ped(update,context):
    afg = update.message.reply_text("Logueandose")
    
    filesized = open('/app/'+namefile,'rb')
-   update.message.reply_text(str(len(filesized.read())))
 
-   if(int(len(filesized.read()))>29* 1000000):
+   sizefile = len(filesized.read())
+
+   filesized.close()
+
+   update.message.reply_text(str(sizefile))
+   
+
+   if(int(sizefile)>29000000):
+
     update.message.reply_text("El archivo es mayor a 29 mb")
+
     listafile = compress('/app/'+namefile,39)
 
     api = Freeapi()
@@ -74,7 +82,6 @@ def Ped(update,context):
     file.close()
 
     update.message.chat.send_document(document = open("/app/"+namefile+".txt","r"))
-
 
    else:
      api = Freeapi()
