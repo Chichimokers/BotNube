@@ -54,9 +54,9 @@ def Ped(update,context):
    
    filesized = open('/app/'+namefile,'rb')
    update.message.reply_text(str(len(filesized.read())))
-   
-   if(len(filesized.read())>29* 1000000):
-    update.message.reply_text("El archivo es mayor a 39 mb")
+
+   if(int(len(filesized.read()))>29* 1000000):
+    update.message.reply_text("El archivo es mayor a 29 mb")
     listafile = compress('/app/'+namefile,39)
 
     api = Freeapi()
