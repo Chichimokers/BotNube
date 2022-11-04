@@ -64,8 +64,12 @@ def Ped(update,context):
    if(int(sizefile)>29000000):
 
     update.message.reply_text("El archivo es mayor a 29 mb")
-
-    listafile = compress('/app/'+namefile,39)
+    
+    afg.edit_text("Comprimiendo")
+    
+    listafile = compress('/app/'+namefile,29)
+    
+    update.message.reply_text(str(listafile))
 
     api = Freeapi()
 
