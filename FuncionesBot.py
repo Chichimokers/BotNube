@@ -51,7 +51,7 @@ def Ped(update,context):
    namefile = dowland(update.message.text,update,None)
    
    afg = update.message.reply_text("Logueandose")
-
+   update.message.reply_text("El archivo es mayor a 39 mb")
    filesized = open('/app/'+namefile,'rb')
 
    if(len(filesized.read())>29* 1000000):
