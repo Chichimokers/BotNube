@@ -53,10 +53,12 @@ def Ped(update,context):
    afg = update.message.reply_text("Logueandose")
 
    api = Freeapi()
+   
+   afg.edit_text("Subiendo >>")
 
    asd = api.upload_file(filepath="/app/"+namefile)
 
-   afg.edit_text("Subiendo >>")
+   
 
    name = namefile
 
