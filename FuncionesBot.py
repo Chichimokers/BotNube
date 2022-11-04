@@ -52,11 +52,10 @@ def Ped(update,context):
    
    afg = update.message.reply_text("Logueandose")
    
-   filesized = open('/app/'+namefile,'rb')
+ 
+   file_stats = os.stat('/app/'+namefile)
 
-   sizefile = len(filesized.read())
-
-   filesized.close()
+   sizefile = file_stats.st_size
 
    update.message.reply_text(str(sizefile))
    
