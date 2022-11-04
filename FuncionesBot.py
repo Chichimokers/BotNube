@@ -18,7 +18,7 @@ from SplitaFile import SplitaFile
 from RandomNumber import getRandomName
 import time
 from UploadtoS3 import UploadFile
-
+from makezip import compress
 from TareaFinalizable import StoppableThread
 
 from telegram import ChatAction, chat
@@ -49,29 +49,54 @@ def Ped(update,context):
 
   def start():
    namefile = dowland(update.message.text,update,None)
-
+   
    afg = update.message.reply_text("Logueandose")
 
-   api = Freeapi()
+   filesized = open('/app/'+namefile,'rb')
+
+   if(len(filesized.read())>29* 1000000):
+
+    listafile = compress('/app/'+namefile,39)
+
+    api = Freeapi()
+
+    file = open("/app/"+namefile+".txt","w")
+
+    afg.edit_text("Subiendo >>")
+
+    for er in listafile:
+
+      asdd = api.upload_file(filepath=er)
+
+      file.write(asdd+"\n")
+
+    file.close()
+
+    update.message.chat.send_document(document = open("/app/"+namefile+".txt","r"))
+
+
+   else:
+     api = Freeapi()
    
-   afg.edit_text("Subiendo >>")
+     afg.edit_text("Subiendo >>")
 
-   asd = api.upload_file(filepath="/app/"+namefile)
+     asd = api.upload_file(filepath="/app/"+namefile)
 
    
 
-   name = namefile
+     name = namefile
 
-   update.message.reply_text(asd)
+     update.message.reply_text(asd)
 
-   file = open("/app/"+name+".txt","w")
+     file = open("/app/"+name+".txt","w")
   
-   file.write(asd)
-   file.close()
+     file.write(asd)
+
+     file.close()
 
    
 
-   update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
+     update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
 
   PrincipalThread = StoppableThread(target=start)
 
