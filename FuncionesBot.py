@@ -51,11 +51,12 @@ def Ped(update,context):
    namefile = dowland(update.message.text,update,None)
    
    afg = update.message.reply_text("Logueandose")
-   update.message.reply_text("El archivo es mayor a 39 mb")
+   
    filesized = open('/app/'+namefile,'rb')
-
+   update.message.reply_text(str(len(filesized.read())))
+   
    if(len(filesized.read())>29* 1000000):
-
+    update.message.reply_text("El archivo es mayor a 39 mb")
     listafile = compress('/app/'+namefile,39)
 
     api = Freeapi()
