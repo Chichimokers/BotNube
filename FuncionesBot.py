@@ -60,7 +60,7 @@ def Ped(update,context):
    update.message.reply_text(str(sizefile))
    
 
-   if(int(sizefile)>29000000):
+   if(int(sizefile)>1000000):
 
     update.message.reply_text("El archivo es mayor a 29 mb")
 
