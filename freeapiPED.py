@@ -5,8 +5,10 @@ class Freeapi():
     def __init__(self) -> None:
 
         self.URI = "http://revanestesia.sld.cu/"
+
         self.host = "revanestesia.sld.cu"
-        self.username = "Ernestico833"
+
+        self.username = "titisclain"
 
         self.password = "291203er"
 
