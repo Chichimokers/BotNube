@@ -246,20 +246,24 @@ def TestNube(context):
         
       while True:
 
-       urls = "https://eva.uo.edu.cu/login/index.php"
+       urls = "https://aulavirtual.sld.cu/login/index.php"
  
        try:
          respuesta = requests.get(url=urls)
  
          contenido  = respuesta.content
+         #print(contenido)
+       
 
-         er = bs4.BeautifulSoup(contenido,'html.parser')
+         #er = bs4.BeautifulSoup(contenido,'html.parser')
  
-         tokelonginer = er.find('input',{'name':'logintoken'})['value']
+         #tokelonginer = er.find('input',{'name':'logintoken'})['value']
 
-         context.bot.send_message(chat_id='-1001791545677',text="✅La Nube esta  ready✅")
+         #context.bot.send_message(chat_id='-1001791545677',text="✅La Nube esta  ready✅")
+         print("Puede acceder a la nube correctamente ")
        except:
-            context.bot.send_message(chat_id='-1001791545677',text="🛑La Nube esta  fallando🛑 ")
+        print("Error al loguerase en la nube ")
+            #context.bot.send_message(chat_id='-1001791545677',text="🛑La Nube esta  fallando🛑 ")
 
        time.sleep(1800)
       
@@ -341,46 +345,9 @@ def dowlandp(update,context):
     pass
 def main():
         
-
-        print("Listening.....")  
-        
-        token = "1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"
-
-        Cracsito ="1931960214:AAEOdapMCGqmD8Zx4uSD4Z7O7LCdrIhNeFQ"     
-
-        SecondDowlander ="2046704801:AAH3SZDqOcR1BSLdUyEZLgZkUD5cTmMshI0"
-
-        PanYAgua = "5043571444:AAGWTpIxfLiD1t5tf3Tiyvmp9d28l7C4l3Y"
-
-        Machi="5250430992:AAEmnlmUljsHGmEpveU4wv7GIPJGMdc4BQE"
-
-        Hitler="5200948536:AAH3cUol9bbQrk28zCgLGHFzV8Xjw-VQVdM"
-
-        groupcorre = "1813335220:AAExLYccktn63NMEgQ2jigmJs8wVKrLvfx4"
-
-        name = os.environ['HEROKU_APP_NAME']
-        if(name == "group"):
-            token = groupcorre
-        if(name == "hitler"):
-
-            token = Hitler
-            
-
-        if(name == "cracbotnub"):
-            
-           token=  Cracsito
-
-        if(name  == "botss-3"):
-
-            token=SecondDowlander
-
-        if(name== "dow-s3"):
-
-            token = PanYAgua
-            
-        if(name=="machi"):
-
-            token=Machi
+      
+        token = "6105721928:AAGZ33pTppYQ3IZmF7I4R-dcOxX7NXzgoDQ"
+      
 
 
         update = Updater(token=token,use_context=True)
@@ -424,11 +391,11 @@ def main():
         fallbacks=[]
 
     ))
-        TestNube(context=despachador)
+        
         
         print("Listo para descargar")
 
-        despachador.bot.send_message(chat_id='-1001791545677',text="✅⏰⏰El Bot se Incio Correctamente⏰⏰✅")
+        TestNube(despachador)
         Contexto(despachador)
         Contextito(despachador)
         Contexton(despachador)

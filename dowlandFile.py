@@ -98,7 +98,7 @@ def dowland(url,update,cookies):
          
          copaidos = 0
 
-         grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(completename) +" Downloading 0%"))
+         ##grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(completename) +" Downloading 0%"))
 
          for bytescop in r.iter_content(chunk_size=1024):
 
@@ -113,7 +113,7 @@ def dowland(url,update,cookies):
 
                print(completename)
        
-               DowlandProgress(bytescopiados=copaidos,totalsize=int(100000000000000),group=grupouploading,mensaje=hola,context=contexto,name=completename)
+               DowlandProgress(bytescopiados=copaidos,totalsize=int(100000000000000),group=None,mensaje=hola,context=contexto,name=completename)
 
                sys.stdout.flush()   
                 
@@ -130,7 +130,7 @@ def dowland(url,update,cookies):
       update.message.chat.send_message(completename)
 
       hola =  update.message.chat.send_message("Descarga Inciada")
-      grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(completename) +" Downloading 0%"))
+      ##grupouploading = contexto.W(chat_id='-1001791545677',text=str("Se esta descargando "+str(completename) +" Downloading 0%"))
 
       print(hola)
       for bytescop in r.iter_content(chunk_size=1024):

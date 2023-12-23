@@ -60,7 +60,7 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
                  update.message.reply_text("✅Operacion Finalizada✅")
                
               else:
-                     print(os.listdir("/app/"))
+                    
 
                      nubea = NubApi()
 

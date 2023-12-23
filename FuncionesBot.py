@@ -1,6 +1,6 @@
 
 
-from asyncore import file_wrapper
+
 from genericpath import isfile
 import json
 
@@ -18,7 +18,7 @@ from SplitaFile import SplitaFile
 from RandomNumber import getRandomName
 import time
 from UploadtoS3 import UploadFile
-from makezip import compress
+
 from TareaFinalizable import StoppableThread
 
 from telegram import ChatAction, chat
@@ -49,65 +49,27 @@ def Ped(update,context):
 
   def start():
    namefile = dowland(update.message.text,update,None)
-   
+
    afg = update.message.reply_text("Logueandose")
-   
- 
-   file_stats = os.stat('/app/'+namefile)
 
-   sizefile = file_stats.st_size
+   api = Freeapi()
 
-   update.message.reply_text(str(sizefile))
-   
-   sizefiles= 2900000
+   asd = api.upload_file(filepath="/app/"+namefile)
 
-   if(int(sizefile)>sizefiles):
+   afg.edit_text("Subiendo >>")
+
+   name = namefile
+
+   update.message.reply_text(asd)
+
+   file = open("/app/"+name+".txt","w")
   
-    update.message.reply_text("El archivo es mayor a 29 mb" )
-
-    afg.edit_text("Comprimiendo")
-    
-    listafile = compress('/app/'+namefile,29)
-  
-
-    api = Freeapi()
-
-    file = open("/app/"+namefile+".txt","w")
-
-    afg.edit_text("Subiendo >>")
-
-    for er in listafile:
-
-      asdd = api.upload_file(filepath=er)
-
-      file.write(asdd+"\n")
-
-    file.close()
-
-    update.message.chat.send_document(document = open("/app/"+namefile+".txt","r"))
-
-   else:
-     api = Freeapi()
-   
-     afg.edit_text("Subiendo >>")
-
-     asd = api.upload_file(filepath="/app/"+namefile)
+   file.write(asd)
+   file.close()
 
    
 
-     name = namefile
-
-     update.message.reply_text(asd)
-
-     file = open("/app/"+name+".txt","w")
-  
-     file.write(asd)
-
-     file.close()
-
-   
-
-     update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
+   update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
 
   PrincipalThread = StoppableThread(target=start)
 
@@ -164,7 +126,7 @@ def NUBUPLOAD(update,context):
 
   pass
 def ProcesartxtdeYoutube(update,context):
-     context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado YoutubeTxt") 
+     ##context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado YoutubeTxt") 
      
      ID =getRandomName()
 
@@ -293,7 +255,7 @@ def ProcesartxtdeYoutube(update,context):
      
      return ConversationHandler.END     
 def DescargarVideodeYoutube(update,context):
-     context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado /youtube con este enlace "+ str(update.message.text))   
+     ##context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado /youtube con este enlace "+ str(update.message.text))   
      ID =getRandomName()
 
      update.message.reply_text("El ID de esta tarea es : "+str(ID)) 
@@ -424,7 +386,7 @@ def CancelarTarea(update,context):
     pass
 def DowlandFromTxt(update,context):
 
-    context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado DowlandTxt")
+    ##context.(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usado DowlandTxt")
     ID =getRandomName()
 
     update.message.reply_text("El ID de esta tarea es : "+str(ID)) 
@@ -719,7 +681,7 @@ def Agregarusuario(update,context):
 
     pass
 def ProcesarDescargadeunFichero(update,context):
-   mensajegrupo = context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usa /dowland con el enlace "+str(update.message.text))
+   ##mensajegrupo = context.bot.send_message(chat_id='-1001791545677',text=str("@"+update.message.chat.username) + " ha usa /dowland con el enlace "+str(update.message.text))
    ID =getRandomName()
 
    update.message.reply_text("El ID de esta tarea es : "+str(ID)) 

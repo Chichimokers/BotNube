@@ -55,7 +55,7 @@ class NubApi():
 
         self.Session = requests.Session()
 
-        self.Moodle = "http://"+"mooc.uniss.edu.cu"+"/"
+        self.Moodle = "https://"+"aulavirtual.sld.cu"+"/"
 
         self.Session.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"})
 
@@ -67,11 +67,11 @@ class NubApi():
 
         self.Autor = "Alguien Escondido"
 
-        self.username = "ernesto1575"
+        self.username = "pingasuave"
 
-        self.password = "291203eR*"
+        self.password = "291203Er*Er"
 
-        self.InitialNegotiation()
+        #self.InitialNegotiation()
 
         self.Login()
 
@@ -126,8 +126,9 @@ class NubApi():
 
           # print("##########DATOS##########")
 
-          data = {'anchor':'','logintoken': self.token, 'username': self.username, 'password': self.password}
+          #data = {'anchor':'','logintoken': self.token, 'username': self.username, 'password': self.password}
 
+          data = {'anchor':'', 'username': self.username, 'password': self.password}
           #data = {'anchor':'', 'username': self.username, 'password': self.password}
 
           # data = {'username': 'titi', 'password': 'titicloud123'}
@@ -586,7 +587,7 @@ class NubApi():
 
           mensajeuno = update.message.reply_text("Uploading")
 
-          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name)))
+          ##grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("Se esta subiendo "+str(name)))
 
           def upload_callback(monitor):
               
@@ -650,7 +651,7 @@ class NubApi():
 
               mensajeuno.delete()
 
-              grupouploading.delete()
+              ##grupouploading.delete()
 
               time.sleep(2)
 
@@ -667,7 +668,7 @@ class NubApi():
 
                  mensajeuno.delete()
 
-                 grupouploading.delete()
+                 ##grupouploading.delete()
 
                  time.sleep(2)
   
@@ -679,7 +680,7 @@ class NubApi():
 
              mensajeuno.delete()
 
-             grupouploading.delete()
+             ##grupouploading.delete()
 
              if(os.path.exists(pathfile)):
 
@@ -701,35 +702,10 @@ class NubApi():
           pass
     def UploadFile(self,pathfile :str,update):
 
-
-          name = pathfile.split("/")[-1]
-
-          #with  as file:
-        
-            #data = file.read()
-         #name = pathfile.split("\\")[-1]
-
- 
-          longitud = open(pathfile,'rb') 
-
-          datos = longitud.read()
-
-          size = len(datos)
-
-          tamanofinal =str(CheckSize(len(datos)))
-
-          print("El size del archivo es "+ str(tamanofinal))
-
-          datos = 0
-
-          longitud.close()
-
-          iles = {"repo_upload_file": open(pathfile,'rb')}
-  
           try:
 
             contenido  = self.Session.get(self.Moodle+"user/edit.php")
- 
+            
             er = bs4.BeautifulSoup(contenido.text,'html.parser')
 
             sesky = er.find('input',{'name':'sesskey'})['value']
@@ -756,6 +732,31 @@ class NubApi():
         
               return "error"
 
+          name = pathfile.split("/")[-1]
+
+          #with  as file:
+        
+            #data = file.read()
+         #name = pathfile.split("\\")[-1]
+
+ 
+          longitud = open(pathfile,'rb') 
+
+          datos = longitud.read()
+
+          size = len(datos)
+
+          tamanofinal =str(CheckSize(len(datos)))
+
+          print("El size del archivo es "+ str(tamanofinal))
+
+          datos = 0
+
+          longitud.close()
+
+          iles = {"repo_upload_file": open(pathfile,'rb')}
+  
+         
           if(ctssxid !=None):
 
            spliteado = ctssxid.split('&')
@@ -783,7 +784,7 @@ class NubApi():
 
           mensajeuno = update.message.reply_text("Uploading 0%")
 
-          grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("<b>Se esta subiendo "+str(name) +" Uploading 0%</b>"),parse_mode=ParseMode.HTML)
+          ##grupouploading = contexto.bot.send_message(chat_id='-1001791545677',text=str("<b>Se esta subiendo "+str(name) +" Uploading 0%</b>"),parse_mode=ParseMode.HTML)
 
           def upload_callback(monitor):
               
@@ -803,7 +804,7 @@ class NubApi():
 
               pass
 
-          values = {'sesskey': sesky,'repo_id':'4','author':self.Autor,'savepath':'/','title':name,'itemid':itemid,'ctx_id':ctxid,"repo_upload_file": (name,open(pathfile,'rb'))}
+          values = {'sesskey': sesky,'repo_id':'3','author':self.Autor,'savepath':'/','title':name,'itemid':itemid,'ctx_id':ctxid,"repo_upload_file": (name,open(pathfile,'rb'))}
        
           e = MultipartEncoder(fields=values)
 
@@ -841,6 +842,7 @@ class NubApi():
 
           print(respuesta.text)
 
+
           try:
 
              er = json.loads(respuesta.text)
@@ -852,7 +854,8 @@ class NubApi():
               print("❌❌Error fatal al leer el json❌❌")
 
               mensajeuno.delete()
-              grupouploading.delete()
+              
+              #grupouploading.delete()
 
               time.sleep(2)
 
@@ -869,7 +872,7 @@ class NubApi():
 
                  mensajeuno.delete()
 
-                 grupouploading.delete()
+                 #grupouploading.delete()
 
                  time.sleep(2)
   
@@ -880,7 +883,7 @@ class NubApi():
              update.message.reply_text("✅ Se subio correctamente el fichero " + name+"✅")
 
              mensajeuno.delete()
-             grupouploading.delete()
+             #grupouploading.delete()
 
              if(os.path.exists(pathfile)):
 

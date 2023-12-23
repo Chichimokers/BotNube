@@ -122,7 +122,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
 
          file = open(paths+"/"+nombre,"wb")
 
-         grupouploading = context.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(nombre) +" Downloading 0%"))
+         ##grupouploading = context.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(nombre) +" Downloading 0%"))
          
          for bytescop  in r.iter_content(chunk_size=4096*1024):
 
@@ -152,7 +152,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
      print("El archivo no existe se procedera a descargar ")
 
      file = open(paths+"/"+nombre,"wb")
-     grupouploading = context.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(nombre) +" Downloading 0%"))
+     ##grupouploading = context.bot.send_message(chat_id='-1001791545677',text=str("Se esta descargando "+str(nombre) +" Downloading 0%"))
      
      for bytescop  in r.iter_content(chunk_size=4096*1024):
 
