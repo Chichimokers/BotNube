@@ -1,6 +1,6 @@
 requests
 py7zr
-python-telegram-bot
+python-telegram-bot==13.0
 pytube
 BeautifulSoup4
 yt_dlp
