@@ -114,15 +114,15 @@ def MultipartTask(url: str,update,tarea:StoppableThread,cookies):
              
 
 
-    if(os.path.exists("/app/"+nombre+".json")): 
+    if(os.path.exists(+nombre+".json")): 
 
-        os.remove("/app/"+nombre+".json")
+        os.remove(+nombre+".json")
         
     else:
         print("Ya existe")
      
 
-    fichero = open("/app/"+nombre+".json","a")
+    fichero = open(+nombre+".json","a")
 
     errorlist = list()
 

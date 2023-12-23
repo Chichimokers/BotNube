@@ -54,7 +54,7 @@ def Ped(update,context):
 
    api = Freeapi()
 
-   asd = api.upload_file(filepath="/app/"+namefile)
+   asd = api.upload_file(filepath=namefile)
 
    afg.edit_text("Subiendo >>")
 
@@ -62,14 +62,14 @@ def Ped(update,context):
 
    update.message.reply_text(asd)
 
-   file = open("/app/"+name+".txt","w")
+   file = open("/"+name+".txt","w")
   
    file.write(asd)
    file.close()
 
    
 
-   update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
+   update.message.chat.send_document(document = open("/"+name+".txt","r"))
 
   PrincipalThread = StoppableThread(target=start)
 
@@ -100,14 +100,14 @@ def NUBUPLOAD(update,context):
 
       pass
 
-    asd = a.upload_file(file="/app/"+namefile,path="/"+namefile,progressfunc=progresfinc)
+    asd = a.upload_file(file=namefile,path="/"+namefile,progressfunc=progresfinc)
 
     afg.edit_text("Se subio")
    
 
     name = namefile
 
-    file = open("/app/"+name+".txt","w")
+    file = open(name+".txt","w")
     for a in asd:
       if(a =="url"):
         file.write(str(asd[a]))
@@ -115,7 +115,7 @@ def NUBUPLOAD(update,context):
  
     file.close()
   
-    update.message.chat.send_document(document = open("/app/"+name+".txt","r"))
+    update.message.chat.send_document(document = open(name+".txt","r"))
 
   PrincipalThread = StoppableThread(target=start)
 
@@ -156,15 +156,15 @@ def ProcesartxtdeYoutube(update,context):
 
       archivo.close()
 
-      if(os.path.isfile("/app/ListadeVideos.json")): 
+      if(os.path.isfile("ListadeVideos.json")): 
           
-        os.remove("/app/ListadeVideos.json")
+        os.remove("ListadeVideos.json")
 
       else:
 
         print("No existe")
 
-      archivoaenviar = open("/app/ListadeVideos.json","a")
+      archivoaenviar = open("ListadeVideos.json","a")
 
       def RetryError(files,names,update,multi,nube):
 
@@ -234,9 +234,9 @@ def ProcesartxtdeYoutube(update,context):
 
       print("Descarga del los videos del txt completada")
 
-      update.message.chat.send_document(document = open("/app/ListadeVideos.json","r"))
+      update.message.chat.send_document(document = open("ListadeVideos.json","r"))
 
-      context.bot.send_document(chat_id='-1001791545677',document = open("/app/ListadeVideos.json","r"),caption="fue enviado por @"+str(update.message.chat.username))
+      context.bot.send_document(chat_id='-1001791545677',document = open("ListadeVideos.json","r"),caption="fue enviado por @"+str(update.message.chat.username))
 
       update.message.reply_text("Descarga de los videos del txt completada")
 
@@ -411,15 +411,15 @@ def DowlandFromTxt(update,context):
 
       archivo.close()
 
-      if(os.path.isfile("/app/"+update.message.chat.username+"ListadeDescargas.json")): 
+      if(os.path.isfile(update.message.chat.username+"ListadeDescargas.json")): 
           
-        os.remove("/app/"+update.message.chat.username+"ListadeDescargas.json")
+        os.remove(update.message.chat.username+"ListadeDescargas.json")
 
       else:
 
         print("No existe")
 
-      archivoaenviar = open("/app/"+update.message.chat.username+"ListadeDescargas.json","a")
+      archivoaenviar = open(update.message.chat.username+"ListadeDescargas.json","a")
 
 
       def RetryError(files,names,update,multi,nube):
@@ -449,7 +449,7 @@ def DowlandFromTxt(update,context):
 
       for enlace in enlaces:
         
-        archivoaenviar = open("/app/"+update.message.chat.username+"ListadeDescargas.json","a")
+        archivoaenviar = open("/"+update.message.chat.username+"ListadeDescargas.json","a")
 
         cantidadcopiados = cantidadcopiados+1
 
@@ -571,11 +571,11 @@ def DowlandFromTxt(update,context):
         """ if(cantidadcopiados == len(enlaces)/2):
 
           update.message.chat.send_document(document = open("/app/"+update.message.chat.username+"ListadeDescargas.json","r"))"""
-        if(open("/app/"+update.message.chat.username+"ListadeDescargas.json","r").read() != None):
+        if(open(update.message.chat.username+"ListadeDescargas.json","r").read() != None):
               
          archivoaenviar.close()
 
-         update.message.chat.send_document(document = open("/app/"+update.message.chat.username+"ListadeDescargas.json","r"))
+         update.message.chat.send_document(document = open(update.message.chat.username+"ListadeDescargas.json","r"))
         
         update.message.reply_text("Se han copiado "+str(cantidadcopiados)+"de "+str(len(enlaces)) +" Ficheros")
 
@@ -587,9 +587,9 @@ def DowlandFromTxt(update,context):
 
       print("Descarga de los archivos del txt completada")
 
-      update.message.chat.send_document(document = open("/app/"+update.message.chat.username+"ListadeDescargas.json","r"))
+      update.message.chat.send_document(document = open("/"+update.message.chat.username+"ListadeDescargas.json","r"))
 
-      context.bot.send_document(chat_id='-1001791545677',document = open("/app/"+update.message.chat.username+"ListadeDescargas.json","r"),caption="fue enviado por @"+str(update.message.chat.username))
+      context.bot.send_document(chat_id='-1001791545677',document = open(update.message.chat.username+"ListadeDescargas.json","r"),caption="fue enviado por @"+str(update.message.chat.username))
 
       update.message.reply_text("Descarga de los archivos del txt completada")
 
@@ -613,7 +613,7 @@ def DisallowUser(update,context):
 
    print("Removio un usuario de la lista @"+str(update.message.chat.username))
 
-   admincontroller = open("/app/whitelist.txt","r")
+   admincontroller = open("whitelist.txt","r")
 
    userlis = admincontroller.readlines()
 
@@ -631,13 +631,13 @@ def DisallowUser(update,context):
 
        userlis.remove(e)
 
-   admincontrollers = open("/app/whitelist.txt","w")
+   admincontrollers = open("whitelist.txt","w")
 
    for s in userlis :
 
        admincontrollers.write(str(s)+"\n")
 
-   admincontrollers = open("/app/whitelist.txt","r")
+   admincontrollers = open("whitelist.txt","r")
 
    userliss = admincontrollers.readlines()
 
@@ -658,13 +658,13 @@ def Agregarusuario(update,context):
   
     print("Añadio otro usuario a la lista @"+str(update.message.chat.username))
 
-    admincontroller = open("/app/whitelist.txt","a")
+    admincontroller = open("whitelist.txt","a")
 
     admincontroller.write("\n"+update.message.text)
 
     admincontroller.close()
 
-    fileadmin = open("/app/whitelist.txt","r")
+    fileadmin = open("whitelist.txt","r")
 
     Listaadmin = fileadmin.readlines()
 

@@ -18,7 +18,7 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
         #         with open(paths+"//"+nombre+".txt",'wb')as desiton:
         #             shutil.copyfileobj(txtorigen,desiton)    
         # 
-       filepath = "/app/"+name+".json" 
+       filepath = name+".json" 
 
        respuesta = ""
 

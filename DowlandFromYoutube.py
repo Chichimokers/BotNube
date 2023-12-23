@@ -61,13 +61,13 @@ def DowlandVide(link,update):
     
     try:
 
-      video.download("/app/",str(name+".mp4"))
+      video.download(" ",str(name+".mp4"))
       
       print("Descarga finalizada")
 
       update.message.reply_text("Descarga finalizada")
     
-      return "/app/"+str(name+".mp4"),video.filesize
+      return str(name+".mp4"),video.filesize
 
     except:
 
