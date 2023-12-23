@@ -20,7 +20,7 @@ def SplitaFiless(path :str):
         
           data = file.read()
 
-        part_size = 10000000
+        part_size = 5000000
 
         filename = os.path.basename(path)
 

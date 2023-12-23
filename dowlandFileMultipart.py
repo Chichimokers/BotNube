@@ -137,7 +137,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
            now = datetime.now()
 
 
-           DowlandProgress(bytescopiados=bytescopiados,totalsize=int(r.headers.get("Content-Length")),group=grupouploading,mensaje=hola,context=contexto,name=nombre)
+           DowlandProgress(bytescopiados=bytescopiados,totalsize=int(r.headers.get("Content-Length")),group=None,mensaje=hola,context=contexto,name=nombre)
 
            print(nombre)
 
@@ -165,7 +165,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
           file.write(bytescop)
         
 
-          DowlandProgress(bytescopiados=bytescopiados,totalsize=int(r.headers.get("Content-Length")),group=grupouploading,mensaje=hola,context=contexto,name=nombre)
+          DowlandProgress(bytescopiados=bytescopiados,totalsize=int(r.headers.get("Content-Length")),group=None,mensaje=hola,context=contexto,name=nombre)
 
           print(nombre)
 

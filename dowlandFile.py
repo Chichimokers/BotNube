@@ -147,7 +147,7 @@ def dowland(url,update,cookies):
 
 
 
-            DowlandProgress(bytescopiados=bytescopiados,totalsize=int(r.headers.get("Content-Length")),group=grupouploading,mensaje=hola,context=contexto,name=completename)
+            DowlandProgress(bytescopiados=bytescopiados,totalsize=int(r.headers.get("Content-Length")),group=None,mensaje=hola,context=contexto,name=completename)
 
             sys.stdout.flush()
 
