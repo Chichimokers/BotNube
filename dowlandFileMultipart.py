@@ -260,7 +260,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
 
         update.message.chat.send_document(document = open("/"+nombre+".json","r"))
         
-        context.bot.send_document(chat_id='-1001791545677',document = open("/app/"+nombre+".json","r"),caption="fue enviado por @"+str(update.message.chat.username))
+        #context.bot.send_document(chat_id='-1001791545677',document = open("/"+nombre+".json","r"),caption="fue enviado por @"+str(update.message.chat.username))
 
        
 

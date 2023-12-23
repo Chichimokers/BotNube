@@ -889,7 +889,7 @@ class NubApi():
 
                  print("Existe")
 
-                 os.remove(pathfile)
+                 #os.remove(pathfile)
             
 
              else:

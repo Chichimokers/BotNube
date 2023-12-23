@@ -172,7 +172,7 @@ def MultipartTask(url: str,update,tarea:StoppableThread,cookies):
     
     update.message.chat.send_action(action=ChatAction.UPLOAD_DOCUMENT,timeout = 5)
 
-    update.message.chat.send_document(document = open("/app/"+nombre+".json","r"))
+    update.message.chat.send_document(document = open("/"+nombre+".json","r"))
 
     tarea.stop()
 

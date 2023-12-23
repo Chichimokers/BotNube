@@ -44,7 +44,7 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
 
                  #context.bot.send_message(chat_id='-647544571',text=)
                  
-                 context.bot.send_document(chat_id='-1001791545677',document = open(filepath,"r"),caption="fue enviado por @"+str(update.message.chat.username))
+                 #context.bot.send_document(chat_id='-1001791545677',document = open(filepath,"r"),caption="fue enviado por @"+str(update.message.chat.username))
 
                  if(os.path.exists(final)):
 
@@ -54,7 +54,7 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
 
                      os.remove(filepath)
 
-                 print(os.listdir("/app/"))
+                 print(os.listdir("/"))
                  
                
                  update.message.reply_text("✅Operacion Finalizada✅")
@@ -77,13 +77,13 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
                          
                        print("Existe y se removera")
 
-                       print(os.listdir("/app/"))
+                       print(os.listdir("/"))
 
                        os.remove(final)
                   else:
                       print("ya el archivo no existe")   
 
-                      print(os.listdir("/app/"))
+                      print(os.listdir("/"))
 
 
                   return respuesta
@@ -97,12 +97,12 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
                          
                        print("Existe")
 
-                       print(os.listdir("/app/"))
+                       print(os.listdir("/"))
 
                   else:
                       print("No existe")   
 
-                      print(os.listdir("/app/"))
+                      print(os.listdir("/"))
 
                   return respuesta
 
