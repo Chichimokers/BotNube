@@ -347,7 +347,7 @@ def DescargarVideodeYoutube(update,context):
 
         #context.bot.send_document(chat_id='-1001791545677',document = open(finalpaht+".json","r"),caption="fue enviado por @"+str(update.message.chat.username))
 
-        Tarea.stop()
+       
 
       else:
 
@@ -355,7 +355,7 @@ def DescargarVideodeYoutube(update,context):
 
          UploadFile(finalpaht,name,update,False,nube,context=context)
 
-      Tarea.stop()
+   
 
       
 
@@ -373,8 +373,6 @@ def CancelarTarea(update,context):
     for tarea in taskslist:
 
         if(str(tarea.name) == str(update.message.text)):
-
-          tarea.stop()
 
           print("Se detuvo Correctamente")
 
@@ -798,8 +796,7 @@ def ProcesarDescargadeunFichero(update,context):
 
            UploadFile(finalpaht,nombre,update,False,nube=nube,context=context)
 
-           tareas.stop()
-
+        
      
 
    tareas = StoppableThread(target = start)

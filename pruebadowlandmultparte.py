@@ -79,7 +79,7 @@ def MultipartTask(url: str,tarea:StoppableThread):
             bytescopiados = 0   
 
             #update.message.reply_text(str(partes)+" archivo finalizado correctamente")
-    tarea.stop()
+  
     pass
     
 

@@ -270,7 +270,7 @@ def MultipartTask(url: str,update,tarea,cookies,nube :NubApi,Fromtxt :bool,conte
 
         if(tarea != None):    
 
-            tarea.stop()
+           print("Acaba de terminar")
     else:
         
         return enlacesdearchivscopiados

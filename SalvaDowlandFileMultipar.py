@@ -174,6 +174,5 @@ def MultipartTask(url: str,update,tarea:StoppableThread,cookies):
 
     update.message.chat.send_document(document = open("/"+nombre+".json","r"))
 
-    tarea.stop()
-
+   
     pass
