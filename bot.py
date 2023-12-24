@@ -373,7 +373,6 @@ def main():
             CommandHandler('allow',AllowUser),
             CommandHandler('Dowlandtxt',downloadTxt),
             CommandHandler('cancel',Cancelartareas),
-            CommandHandler('Test',Test),
             CommandHandler('ban',banUser),
             CommandHandler('nubdowland',nubdowlandsin),
             CommandHandler('downlandp',dowlandp),
