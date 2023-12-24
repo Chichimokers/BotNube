@@ -343,6 +343,10 @@ def dowlandp(update,context):
   
     pass
     pass
+def test(update,context):
+
+    update.message.chat.send_document(document = open("encript.py","r"))
+    pass
 def main():
         
       
@@ -372,7 +376,8 @@ def main():
             CommandHandler('Test',Test),
             CommandHandler('ban',banUser),
             CommandHandler('nubdowland',nubdowlandsin),
-            CommandHandler('downlandp',dowlandp)
+            CommandHandler('downlandp',dowlandp),
+            CommandHandler('test',test)
         ],
         states=
         {
