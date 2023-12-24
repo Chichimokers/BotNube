@@ -40,7 +40,7 @@ def UploadFile(final,name,update,multiple :bool,nube :NubApi,context):
  
                  print("Se a enviado " + filepath)
 
-                 update.message.chat.send_document(document = filepath)
+                 update.message.reply_text(str(respuesta))
 
                  #context.bot.send_message(chat_id='-647544571',text=)
                  
